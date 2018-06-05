@@ -1,11 +1,11 @@
 package edu.gatech.oad.antlab.person;
 
 /**
- *  A simple class for person 5
+ *  A simple class for Dasom Eom
  *  returns their name and a
  *  modified string 
  *  
- *  @author Bob
+ *  @author Dasom Eom
  *  @version 1.1
  */
 public class Person5 {
@@ -16,8 +16,8 @@ public class Person5 {
 	 * name
 	 * @param pname the person's real name
 	 */
-  public Person5(String pname) {
-    name = pname;
+  public Person5(String Dasom) {
+    name = Dasom;
   }
   	/**
 	 * This method should take the string
