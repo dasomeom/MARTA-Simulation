@@ -13,7 +13,7 @@ public class Person5 {
   private String name;
   	/**
 	 * The constructor, takes in the persons
-	 * name
+	 * name.
 	 * @param pname the person's real name
 	 */
   public Person5(String Dasom) {
