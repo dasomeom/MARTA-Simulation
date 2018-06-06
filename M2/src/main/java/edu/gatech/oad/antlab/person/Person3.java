@@ -4,7 +4,7 @@ package edu.gatech.oad.antlab.person;
  *  returns their name and a
  *  reversed string 
  *  
- *  @author  Bob
+ *  @author  Aishwarya Chitnis
  *  @version 1.1
  */
 public class Person3 {
@@ -43,6 +43,12 @@ public class Person3 {
 	 */
 	private String calc(String input) {
 	  //Person 3 put your implementation here
-	  return null;
+		String output = String[input.length]
+		for (int i = input.length - 1; i >= 0; i--) {
+			for (int j = 0; j < input.length; j++) {
+				output[j] = input[i];
+			}
+		}
+		return output;
 	}
 }
