@@ -57,26 +57,25 @@ import edu.gatech.oad.antlab.pkg2.*;
           + ant22.getMessage() + ant31.getMessage();
 		  //Person1 replace P1 with your name
 		  //and gburdell1 with your gt id
-		  Person1 p1 = new Person1("P1");
-		  toPrint += p1.toString("gburdell1");
+		  Person1 p1 = new Person1("Zach Sanchez");
+		  toPrint += p1.toString("903220275");
 		  //Person2 replace P2 with your name
 		  //and gburdell with your gt id
 		  Person2 p2 = new Person2("Chang Pyo");
 		  toPrint += p2.toString("cpyo9");
 		  //Person3 replace P3 with your name
 		  //and gburdell3 with your gt id
-		  Person3 p3 = new Person3("P3");
-		  toPrint += p3.toString("gburdell3");
-                  //Person4 replace P4 with your name
-                  //and gburdell4 with your gt id
-                  Person4 p4 = new Person4("Victoria Neal");
-                  toPrint += p4.toString("vneal4");
-                  //Person5 replace P4 with your name
-                  //and gburdell5 with your gt id
-                  Person5 p5 = new Person5("P5");
-                  toPrint += p5.toString("gburdell5");
-		  
-        System.out.println(toPrint);
+		  Person3 p3 = new Person3("Aishwarya Chitnis");
+		  toPrint += p3.toString("achitnis7");
+      //Person4 replace P4 with your name
+      //and gburdell4 with your gt id
+      Person4 p4 = new Person4("Victoria Neal");
+      toPrint += p4.toString("vneal4");
+      //Person5 replace P5 with your name
+      //and gburdell5 with your gt id
+      Person5 p5 = new Person5("Dasom Eom");
+      toPrint += p5.toString("902822885");
+      System.out.println(toPrint);
         
         
     }
