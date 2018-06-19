@@ -133,12 +133,31 @@
         android:id="@+id/btRegister"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginBottom="183dp"
         android:background="@drawable/button"
         android:text="Register"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/backmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="108dp"
+        android:text="Go back to main menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/backmain"
+        android:layout_centerHorizontal="true"
+        android:text="or" />
 </RelativeLayout>
 >>>>>>> Dasom
