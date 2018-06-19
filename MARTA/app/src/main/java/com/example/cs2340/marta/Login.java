@@ -39,7 +39,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(intReg);
         }
         if (v == toMain) {
+<<<<<<< HEAD
             Intent intMain = new Intent (this, MainActivity.class);
+=======
+            Intent intMain = new Intent (this, Main.class);
+>>>>>>> Dasom
             startActivity(intMain);
         }
     }

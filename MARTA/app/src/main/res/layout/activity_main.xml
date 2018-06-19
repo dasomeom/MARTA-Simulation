@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,6 +15,17 @@
         tools:layout_editor_absoluteY="8dp">
 
         <TextView
+=======
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/gradient">
+
+
+<TextView
+>>>>>>> Dasom
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -21,6 +33,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="149dp"
             android:text="MARTA Transportation System"
+<<<<<<< HEAD
             android:textSize="24sp"
             tools:layout_editor_absoluteX="66dp"
             tools:layout_editor_absoluteY="118dp" />
@@ -52,6 +65,35 @@
             android:textSize="24sp"
             tools:layout_editor_absoluteX="105dp"
             tools:layout_editor_absoluteY="411dp" />
+=======
+            android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/mainregister"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/button"
+        android:onClick="onClick"
+        android:text="Register"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/mainlogin"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="139dp"
+        android:background="@drawable/button"
+        android:onClick="onClick"
+        android:text="login"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+>>>>>>> Dasom
         " />
 
         <TextView
@@ -62,6 +104,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="109dp"
             android:text="Welcome to"
+<<<<<<< HEAD
             android:textSize="22sp"
             tools:layout_editor_absoluteX="143dp"
             tools:layout_editor_absoluteY="16dp" />
@@ -71,3 +114,9 @@
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
+=======
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+>>>>>>> Dasom
