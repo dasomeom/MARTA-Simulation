@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".Register" />
-        <activity android:name=".System"></activity>
+        <activity android:name=".System" />
+        <activity android:name=".list"></activity>
     </application>
 
 </manifest>

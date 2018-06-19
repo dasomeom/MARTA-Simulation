@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="30dp"
         android:text="TextView"
-        android:textSize="24sp" />
+        android:textSize="28sp" />
 
     <TextView
         android:id="@+id/tvid"
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/tvtype"
-        android:layout_marginEnd="92dp"
+        android:layout_marginEnd="45dp"
         android:text="TextView"
-        android:textSize="24sp" />
+        android:textSize="28sp" />
 </RelativeLayout>
 
