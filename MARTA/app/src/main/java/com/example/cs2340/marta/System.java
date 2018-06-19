@@ -16,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,18 +23,14 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> Dasom
 
 public class System extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonLogout;
-<<<<<<< HEAD
-=======
     private SampleAdapter adapter;
     private ListView lv;
     private List<Sample> lsam;
 
->>>>>>> Dasom
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +38,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_system);
         buttonLogout= (Button) findViewById(R.id.mslogout);
         buttonLogout.setOnClickListener(this);
-<<<<<<< HEAD
-    }
-
-    public void onClick(View v) {
-        if (v == buttonLogout) {
-            Intent intLogout = new Intent(this, MainActivity.class);
-            startActivity(intLogout);
-        }
-    }
-}
-=======
-
         readBusData();
         readRouteData();
         readStopData();
@@ -64,15 +47,12 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         adapter = new SampleAdapter(this, R.layout.tvlayout, samples);
         lv.setAdapter(adapter);
 
-
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intlist = new Intent (view.getContext(), list.class);
                 intlist.putExtra("Sample", samples.get(position).toString());
-
                 startActivity(intlist);
-
             }
         });
 
@@ -88,10 +68,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
 
 
     private List<Sample> samples = new ArrayList<>();
-
-
-
-
     private void readBusData() {
 
         InputStream is = getResources().openRawResource(R.raw.busdata);
@@ -133,10 +109,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
             }
 
         } catch (IOException e) {
-            // Logs error with priority level
-            Log.wtf("System", "Error reading data file on line" + line, e);
 
-            // Prints throwable details
             e.printStackTrace();
         }
 
@@ -247,13 +220,4 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
-
-
-
-
-
 }
-
-
-
->>>>>>> Dasom
