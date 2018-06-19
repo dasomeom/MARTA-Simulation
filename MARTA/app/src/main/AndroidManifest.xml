@@ -27,7 +27,12 @@
 =======
         <activity android:name=".Login" />
         <activity android:name=".Register" />
+<<<<<<< HEAD
         <activity android:name=".System"></activity>
+>>>>>>> Dasom
+=======
+        <activity android:name=".System" />
+        <activity android:name=".list"></activity>
 >>>>>>> Dasom
     </application>
 

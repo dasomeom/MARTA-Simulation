@@ -64,14 +64,12 @@ public class busSample extends Sample {
 
     @Override
     public String toString() {
-        return "{" +
-                "type='" + type + '\'' +
-                ", ID=" + ID +
-                ", Route=" + Route +
-                ", Location=" + Location +
-                ", Riders=" + Riders +
-                ", Capacity=" + Capacity +
-                ", Speed=" + Speed +
-                '}';
+        return "Type = " + type +  "\n" +
+                "ID = " + ID + "\n" +
+                "Route = " + Route + "\n" +
+                "Location = " + Location + "\n" +
+                "Riders = " + Riders + "\n" +
+                "Capacity = " + Capacity + "\n" +
+                "Speed = " + Speed;
     }
 }

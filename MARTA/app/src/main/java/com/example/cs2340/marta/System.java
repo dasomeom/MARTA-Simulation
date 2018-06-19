@@ -68,8 +68,11 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intlist = new Intent (view.getContext(), list.class);
+                intlist.putExtra("Sample", samples.get(position).toString());
 
-                Toast.makeText(getApplicationContext(), samples.get(position).toString(), Toast.LENGTH_SHORT).show();
+                startActivity(intlist);
+
             }
         });
 

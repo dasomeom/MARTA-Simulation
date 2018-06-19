@@ -126,21 +126,19 @@ public class routeSample extends Sample {
 
     @Override
     public String toString() {
-        return "{" +
-                "type='" + type + '\'' +
-                ", ID=" + ID +
-                ", Index=" + Index +
-                ", Name='" + Name + '\'' +
-                ", Stop0=" + Stop0 +
-                ", Stop1=" + Stop1 +
-                ", Stop2=" + Stop2 +
-                ", Stop3=" + Stop3 +
-                ", Stop4=" + Stop4 +
-                ", Stop5=" + Stop5 +
-                ", Stop6=" + Stop6 +
-                ", Stop7=" + Stop7 +
-                ", Stop8=" + Stop8 +
-                ", Stop9=" + Stop9 +
-                '}';
+        return "Type = " + type + "\n" +
+                "ID = " + ID + "\n" +
+                "Index = " + Index + "\n" +
+                "Name = " + Name + "\n" +
+                "Stop0 = " + Stop0 + "\n" +
+                "Stop1 = " + Stop1 + "\n" +
+                "Stop2 = " + Stop2 + "\n" +
+                "Stop3 = " + Stop3 + "\n" +
+                "Stop4 = " + Stop4 + "\n" +
+                "Stop5 = " + Stop5 + "\n" +
+                "Stop6 = " + Stop6 + "\n" +
+                "Stop7 = " + Stop7 + "\n" +
+                "Stop8 = " + Stop8 + "\n" +
+                "Stop9 = " + Stop9 + "\n";
     }
 }
