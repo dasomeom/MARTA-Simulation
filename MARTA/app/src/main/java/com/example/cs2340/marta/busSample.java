@@ -1,5 +1,7 @@
 package com.example.cs2340.marta;
 
+import java.util.List;
+
 public class busSample extends Sample {
     private String type = "Bus";
     private int ID;
@@ -8,6 +10,12 @@ public class busSample extends Sample {
     private int Riders;
     private int Capacity;
     private int Speed;
+    private List<routeSample> routesamplelist;
+    private routeSample theroute;
+    private stopSample current;
+    private stopSample next;
+
+
 
     public String getType() {
         return type;
@@ -61,15 +69,44 @@ public class busSample extends Sample {
         Speed = speed;
     }
 
+    public List<routeSample> getRoutesamplelist() { return routesamplelist; }
+
+    public void setRoutesamplelist(List<routeSample> routesamplelist) { this.routesamplelist = routesamplelist; }
+
+    public routeSample getTheroute() { return theroute; }
+
+    public void setTheroute(routeSample theroute) { this.theroute = theroute; }
+
+    public stopSample getCurrent() { return current; }
+
+    public void setCurrent(stopSample current) { this.current = current; }
+
+    public stopSample getNext() { return next; }
+
+    public void setNext(stopSample next) { this.next = next; }
 
     @Override
     public String toString() {
-        return "Type = " + type +  "\n" +
-                "ID = " + ID + "\n" +
-                "Route = " + Route + "\n" +
-                "Location = " + Location + "\n" +
-                "Riders = " + Riders + "\n" +
-                "Capacity = " + Capacity + "\n" +
-                "Speed = " + Speed;
+        if (theroute != null) {
+            return  theroute.toString()+ "\n"+
+                    "Type: " + type +  "\n" +
+                    "ID: " + ID + "\n" +
+                    "Route: " + Route + "\n" +
+                    "Current stop: " + current + "\n" +
+                    //"Next stop: " + next + "\n" +
+                    "Riders: " + Riders + "\n" +
+                    "Capacity: " + Capacity + "\n" +
+                    "Speed: " + Speed;
+        } else {
+            return "Type: " + type +  "\n" +
+                    "ID: " + ID + "\n" +
+                    "Route: " + Route + "\n" +
+                    "Current stop: " + current + "\n" +
+                    //"Next stop: " + next + "\n" +
+                    "Riders: " + Riders + "\n" +
+                    "Capacity: " + Capacity + "\n" +
+                    "Speed: " + Speed;
+        }
+
     }
 }

@@ -56,11 +56,11 @@ public class stopSample extends Sample {
 
     @Override
     public String toString() {
-        return "Type = " + type + "\n" +
-                "ID = " + ID + "\n" +
-                "Name = " + Name + "\n" +
-                "Riders = " + Riders + "\n" +
-                "Latitude = " + Latitude + "\n" +
-                "Longitude = " + Longitude;
+        return "Type: " + type + "\n" +
+                "ID: " + ID + "\n" +
+                "Name: " + Name + "\n" +
+                "Riders: " + Riders + "\n" +
+                "Latitude: " + Latitude + "\n" +
+                "Longitude: " + Longitude;
     }
 }

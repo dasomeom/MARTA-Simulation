@@ -27,6 +27,11 @@ public class System extends AppCompatActivity implements View.OnClickListener {
     private SampleAdapter adapter;
     private ListView lv;
     private List<Sample> lsam;
+    private List<Sample> samples = new ArrayList<>();
+    private List<busSample> buslist = new ArrayList<>();
+    private List<routeSample> routelist = new ArrayList<>();
+    private List<stopSample> stoplist = new ArrayList<>();
+
 
 
     @Override
@@ -39,6 +44,35 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         readBusData();
         readRouteData();
         readStopData();
+        for (routeSample route : routelist) {
+            route.setStopsamplelist(stoplist);
+            for (stopSample astop : stoplist) {
+                if (astop.getID() == route.getStop0()) {route.setStop0(astop);}
+                else if (astop.getID() == route.getStop0()) {route.setStop0(astop);}
+                else if (astop.getID() == route.getStop1()) {route.setStop1(astop);}
+                else if (astop.getID() == route.getStop2()) {route.setStop2(astop);}
+                else if (astop.getID() == route.getStop3()) {route.setStop3(astop);}
+                else if (astop.getID() == route.getStop4()) {route.setStop4(astop);}
+                else if (astop.getID() == route.getStop5()) {route.setStop5(astop);}
+                else if (astop.getID() == route.getStop6()) {route.setStop6(astop);}
+                else if (astop.getID() == route.getStop7()) {route.setStop7(astop);}
+                else if (astop.getID() == route.getStop8()) {route.setStop8(astop);}
+                else if (astop.getID() == route.getStop9()) {route.setStop9(astop);}
+            }
+        }
+        for (busSample bus : buslist) {
+            bus.setRoutesamplelist(routelist);
+            for (routeSample aroute : routelist) {
+                if (aroute.getID() == bus.getRoute()) {
+                    bus.setTheroute(aroute);
+                }
+            }
+        }
+        for (busSample abus : buslist) {
+            abus.setCurrent(abus.getTheroute().getStp0());
+            abus.setNext(abus.getTheroute().getStp1());
+        }
+
 
         lv = (ListView)findViewById(R.id.listview);
 
@@ -60,6 +94,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+
     public void onClick(View v) {
         if (v == buttonLogout) {
             Intent intLogout = new Intent(this, Main.class);
@@ -67,8 +102,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-
-    private List<Sample> samples = new ArrayList<>();
 
 
 
@@ -108,10 +141,11 @@ public class System extends AppCompatActivity implements View.OnClickListener {
 
                 // Adding object to a class
                 samples.add(sample);
-
+                buslist.add(sample);
                 // Log the object
                 Log.d("System", "Just created: " + sample);
             }
+
 
         } catch (IOException e) {
             // Logs error with priority level
@@ -166,11 +200,10 @@ public class System extends AppCompatActivity implements View.OnClickListener {
 
                 // Adding object to a class
                 samples.add(sample);
-
+                routelist.add(sample);
                 // Log the object
                 Log.d("System", "Just created: " + sample);
             }
-
         } catch (IOException e) {
             // Logs error with priority level
             Log.wtf("System", "Error reading data file on line" + line, e);
@@ -214,10 +247,11 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 sample.setLongitude(Double.parseDouble(tokens[4]));
                 // Adding object to a class
                 samples.add(sample);
-
+                stoplist.add(sample);
                 // Log the object
                 Log.d("System", "Just created: " + sample);
             }
+
 
         } catch (IOException e) {
             // Logs error with priority level
