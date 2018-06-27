@@ -1,5 +1,9 @@
 package com.example.cs2340.marta;
 
+import java.text.NumberFormat;
+import java.util.List;
+
+
 public class busSample extends Sample {
     private String type = "Bus";
     private int ID;
@@ -8,6 +12,15 @@ public class busSample extends Sample {
     private int Riders;
     private int Capacity;
     private int Speed;
+    private List<routeSample> routesamplelist;
+    private routeSample theroute;
+    private stopSample current;
+    private stopSample next;
+    private double distance;
+    private double time;
+    private java.util.Random randGenerator;
+    NumberFormat nf = NumberFormat.getInstance();
+
 
     public String getType() {
         return type;
@@ -61,15 +74,55 @@ public class busSample extends Sample {
         Speed = speed;
     }
 
+    public List<routeSample> getRoutesamplelist() { return routesamplelist; }
+
+    public void setRoutesamplelist(List<routeSample> routesamplelist) { this.routesamplelist = routesamplelist; }
+
+    public routeSample getTheroute() { return theroute; }
+
+    public void setTheroute(routeSample theroute) { this.theroute = theroute; }
+
+    public stopSample getCurrent() { return current; }
+
+    public void setCurrent(stopSample current) { this.current = current; }
+
+    public stopSample getNext() { return next; }
+
+    public void setNext(stopSample next) { this.next = next; }
+
+    public double getDistance() {
+        double distanceConversion = 70.0D;
+        return Double.valueOf(70.0D * Math.sqrt(Math.pow(current.getLatitude()
+                - next.getLatitude(), 2.0D) + Math.pow(current.getLongitude()
+                - next.getLongitude(), 2.0D)));
+    }
+    public double getTime() {
+        return Speed * getDistance();
+    }
 
     @Override
     public String toString() {
-        return "Type = " + type +  "\n" +
-                "ID = " + ID + "\n" +
-                "Route = " + Route + "\n" +
-                "Location = " + Location + "\n" +
-                "Riders = " + Riders + "\n" +
-                "Capacity = " + Capacity + "\n" +
-                "Speed = " + Speed;
+        if (theroute != null && current != null) {
+            return "Type: " + type +  "\n" +
+                    "ID: " + ID + "\n" +
+                    "Route: " + Route + "\n" +
+                    "Current stop: " + current.getName() + "\n" +
+                    "Next stop: " + next.getName() + "\n" +
+                    "Distance: " + nf.format(getDistance()) + "\n" +
+                    "Time to the next stop: " + nf.format(getTime()) + "\n" +
+                    "Riders: " + Riders + "\n" +
+                    "Capacity: " + Capacity + "\n" +
+                    "Speed: " + Speed;
+        } else {
+            return "Type: " + type +  "\n" +
+                    "ID: " + ID + "\n" +
+                    "Route: " + Route + "\n" +
+                    "Current stop: " + current + "\n" +
+                    //"Next stop: " + next + "\n" +
+                    "Riders: " + Riders + "\n" +
+                    "Capacity: " + Capacity + "\n" +
+                    "Speed: " + Speed;
+        }
+
     }
 }

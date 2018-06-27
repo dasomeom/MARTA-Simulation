@@ -1,5 +1,11 @@
 package com.example.cs2340.marta;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Collection;
+import java.util.Queue;
+
 public class routeSample extends Sample {
     private String type = "Route";
     private int ID;
@@ -15,130 +21,155 @@ public class routeSample extends Sample {
     private int Stop7;
     private int Stop8;
     private int Stop9;
+    private List<stopSample> stopsamplelist;
+    private stopSample stp0;
+    private stopSample stp1;
+    private stopSample stp2;
+    private stopSample stp3;
+    private stopSample stp4;
+    private stopSample stp5;
+    private stopSample stp6;
+    private stopSample stp7;
+    private stopSample stp8;
+    private stopSample stp9;
 
-    public String getType() {
-        return type;
-    }
+    private Queue<stopSample> stops = new LinkedList<>();
 
-    public int getID() {
-        return ID;
-    }
+    public Queue<stopSample> getStops() { return stops; }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
+    public void setStops() { this.stops = stops; }
 
-    public int getIndex() {
-        return Index;
-    }
+    public stopSample getStp0() { return stp0; }
 
-    public void setIndex(int index) {
-        Index = index;
-    }
+    public void setStp0(stopSample stp0) { this.stp0 = stp0; stops.add(stp0);}
 
-    public String getName() {
-        return Name;
-    }
+    public stopSample getStp1() { return stp1; }
 
-    public void setName(String name) {
-        Name = name;
-    }
+    public void setStp1(stopSample stp1) { this.stp1 = stp1; stops.add(stp1);}
 
-    public int getStop0() {
-        return Stop0;
-    }
+    public stopSample getStp2() { return stp2; }
 
-    public void setStop0(int stop0) {
-        Stop0 = stop0;
-    }
+    public void setStp2(stopSample stp2) { this.stp2 = stp2; stops.add(stp2);}
 
-    public int getStop1() {
-        return Stop1;
-    }
+    public stopSample getStp3() { return stp3; }
 
-    public void setStop1(int stop1) {
-        Stop1 = stop1;
-    }
+    public void setStp3(stopSample stp3) { this.stp3 = stp3; stops.add(stp3);}
 
-    public int getStop2() {
-        return Stop2;
-    }
+    public stopSample getStp4() { return stp4; }
 
-    public void setStop2(int stop2) {
-        Stop2 = stop2;
-    }
+    public void setStp4(stopSample stp4) { this.stp4 = stp4; stops.add(stp4);}
 
-    public int getStop3() {
-        return Stop3;
-    }
+    public stopSample getStp5() { return stp5; }
 
-    public void setStop3(int stop3) {
-        Stop3 = stop3;
-    }
+    public void setStp5(stopSample stp5) { this.stp5 = stp5; stops.add(stp5);}
 
-    public int getStop4() {
-        return Stop4;
-    }
+    public stopSample getStp6() { return stp6; }
 
-    public void setStop4(int stop4) {
-        Stop4 = stop4;
-    }
+    public void setStp6(stopSample stp6) { this.stp6 = stp6; stops.add(stp6);}
 
-    public int getStop5() {
-        return Stop5;
-    }
+    public stopSample getStp7() { return stp7; }
 
-    public void setStop5(int stop5) {
-        Stop5 = stop5;
-    }
+    public void setStp7(stopSample stp7) { this.stp7 = stp7; stops.add(stp7);}
 
-    public int getStop6() {
-        return Stop6;
-    }
+    public stopSample getStp8() { return stp8; }
 
-    public void setStop6(int stop6) {
-        Stop6 = stop6;
-    }
+    public void setStp8(stopSample stp8) { this.stp8 = stp8; stops.add(stp8);}
 
-    public int getStop7() {
-        return Stop7;
-    }
+    public stopSample getStp9() { return stp9; }
 
-    public void setStop7(int stop7) {
-        Stop7 = stop7;
-    }
+    public void setStp9(stopSample stp9) { this.stp9 = stp9; stops.add(stp9);}
 
-    public int getStop8() {
-        return Stop8;
-    }
+    public String getType() { return type; }
 
-    public void setStop8(int stop8) {
-        Stop8 = stop8;
-    }
+    public int getID() { return ID; }
 
-    public int getStop9() {
-        return Stop9;
-    }
+    public void setID(int ID) { this.ID = ID; }
 
-    public void setStop9(int stop9) {
-        Stop9 = stop9;
-    }
+    public int getIndex() { return Index; }
+
+    public void setIndex(int index) { Index = index; }
+
+    public String getName() { return Name; }
+
+    public void setName(String name) { Name = name; }
+
+    public int getStop0() { return Stop0; }
+
+    public void setStop0(int stop0) { Stop0 = stop0; }
+
+    public int getStop1() { return Stop1; }
+
+    public void setStop1(int stop1) { Stop1 = stop1; }
+
+    public int getStop2() { return Stop2; }
+
+    public void setStop2(int stop2) { Stop2 = stop2; }
+
+    public int getStop3() { return Stop3; }
+
+    public void setStop3(int stop3) { Stop3 = stop3; }
+
+    public int getStop4() { return Stop4; }
+
+    public void setStop4(int stop4) { Stop4 = stop4; }
+
+    public int getStop5() { return Stop5; }
+
+    public void setStop5(int stop5) { Stop5 = stop5; }
+
+    public int getStop6() { return Stop6; }
+
+    public void setStop6(int stop6) { Stop6 = stop6; }
+
+    public int getStop7() { return Stop7; }
+
+    public void setStop7(int stop7) { Stop7 = stop7; }
+
+    public int getStop8() { return Stop8; }
+
+    public void setStop8(int stop8) { Stop8 = stop8; }
+
+    public int getStop9() { return Stop9; }
+
+    public void setStop9(int stop9) { Stop9 = stop9; }
+
+    public List<stopSample> getStopsamplelist() { return stopsamplelist; }
+
+    public void setStopsamplelist(List<stopSample> stopsamplelist) { this.stopsamplelist = stopsamplelist; }
 
     @Override
     public String toString() {
-        return "Type = " + type + "\n" +
-                "ID = " + ID + "\n" +
-                "Index = " + Index + "\n" +
-                "Name = " + Name + "\n" +
-                "Stop0 = " + Stop0 + "\n" +
-                "Stop1 = " + Stop1 + "\n" +
-                "Stop2 = " + Stop2 + "\n" +
-                "Stop3 = " + Stop3 + "\n" +
-                "Stop4 = " + Stop4 + "\n" +
-                "Stop5 = " + Stop5 + "\n" +
-                "Stop6 = " + Stop6 + "\n" +
-                "Stop7 = " + Stop7 + "\n" +
-                "Stop8 = " + Stop8 + "\n" +
-                "Stop9 = " + Stop9 + "\n";
+        if (stp0 != null) {
+            return "Type: " + type + "\n" +
+                    "ID: " + ID + "\n" +
+                    "Index: " + Index + "\n" +
+                    "Name: " + Name + "\n" +
+                    "Stop0: " + Stop0 + "\n" +
+                    "Stop1: " + Stop1 + "\n" +
+                    "Stop2: " + Stop2 + "\n" +
+                    "Stop3: " + Stop3 + "\n" +
+                    "Stop4: " + Stop4 + "\n" +
+                    "Stop5: " + Stop5 + "\n" +
+                    "Stop6: " + Stop6 + "\n" +
+                    "Stop7: " + Stop7 + "\n" +
+                    "Stop8: " + Stop8 + "\n" +
+                    "Stop9: " + Stop9 + "\n";
+
+        } else {
+            return "Type: " + type + "\n" +
+                    "ID: " + ID + "\n" +
+                    "Index: " + Index + "\n" +
+                    "Name: " + Name + "\n" +
+                    "Stop0: " + Stop0 + "\n" +
+                    "Stop1: " + Stop1 + "\n" +
+                    "Stop2: " + Stop2 + "\n" +
+                    "Stop3: " + Stop3 + "\n" +
+                    "Stop4: " + Stop4 + "\n" +
+                    "Stop5: " + Stop5 + "\n" +
+                    "Stop6: " + Stop6 + "\n" +
+                    "Stop7: " + Stop7 + "\n" +
+                    "Stop8: " + Stop8 + "\n" +
+                    "Stop9: " + Stop9 + "\n";
+        }
     }
 }

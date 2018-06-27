@@ -20,11 +20,12 @@
 
     <TextView
         android:id="@+id/details"
-        android:layout_width="259dp"
+        android:layout_width="335dp"
         android:layout_height="428dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
+        android:scrollbars="vertical"
         android:text="TextView"
         android:textSize="26sp" />
 
