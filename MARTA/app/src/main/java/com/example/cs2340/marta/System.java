@@ -17,9 +17,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class System extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,17 +49,17 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         for (routeSample route : routelist) {
             route.setStopsamplelist(stoplist);
             for (stopSample astop : stoplist) {
-                if (astop.getID() == route.getStop0()) {route.setStop0(astop);}
-                else if (astop.getID() == route.getStop0()) {route.setStop0(astop);}
-                else if (astop.getID() == route.getStop1()) {route.setStop1(astop);}
-                else if (astop.getID() == route.getStop2()) {route.setStop2(astop);}
-                else if (astop.getID() == route.getStop3()) {route.setStop3(astop);}
-                else if (astop.getID() == route.getStop4()) {route.setStop4(astop);}
-                else if (astop.getID() == route.getStop5()) {route.setStop5(astop);}
-                else if (astop.getID() == route.getStop6()) {route.setStop6(astop);}
-                else if (astop.getID() == route.getStop7()) {route.setStop7(astop);}
-                else if (astop.getID() == route.getStop8()) {route.setStop8(astop);}
-                else if (astop.getID() == route.getStop9()) {route.setStop9(astop);}
+                if (astop.getID() == route.getStop0()) {route.setStp0(astop);}
+                else if (astop.getID() == route.getStop0()) {route.setStp0(astop);}
+                else if (astop.getID() == route.getStop1()) {route.setStp1(astop);}
+                else if (astop.getID() == route.getStop2()) {route.setStp2(astop);}
+                else if (astop.getID() == route.getStop3()) {route.setStp3(astop);}
+                else if (astop.getID() == route.getStop4()) {route.setStp4(astop);}
+                else if (astop.getID() == route.getStop5()) {route.setStp5(astop);}
+                else if (astop.getID() == route.getStop6()) {route.setStp6(astop);}
+                else if (astop.getID() == route.getStop7()) {route.setStp7(astop);}
+                else if (astop.getID() == route.getStop8()) {route.setStp8(astop);}
+                else if (astop.getID() == route.getStop9()) {route.setStp9(astop);}
             }
         }
         for (busSample bus : buslist) {
@@ -67,11 +69,9 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                     bus.setTheroute(aroute);
                 }
             }
+
         }
-        for (busSample abus : buslist) {
-            abus.setCurrent(abus.getTheroute().getStp0());
-            abus.setNext(abus.getTheroute().getStp1());
-        }
+
 
 
         lv = (ListView)findViewById(R.id.listview);
@@ -83,9 +83,12 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intlist = new Intent (view.getContext(), list.class);
-                intlist.putExtra("Sample", samples.get(position).toString());
+                Sample aasample = samples.get(position);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("aaSample", (Serializable) aasample);
 
+                Intent intlist = new Intent (view.getContext(), list.class);
+                intlist.putExtras(bundle);
                 startActivity(intlist);
 
             }
@@ -196,7 +199,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 sample.setStop7(Integer.parseInt(tokens[10]));
                 sample.setStop8(Integer.parseInt(tokens[11]));
                 sample.setStop9(Integer.parseInt(tokens[12]));
-
 
                 // Adding object to a class
                 samples.add(sample);

@@ -1,6 +1,8 @@
 package com.example.cs2340.marta;
 
+import java.text.NumberFormat;
 import java.util.List;
+
 
 public class busSample extends Sample {
     private String type = "Bus";
@@ -14,7 +16,10 @@ public class busSample extends Sample {
     private routeSample theroute;
     private stopSample current;
     private stopSample next;
-
+    private double distance;
+    private double time;
+    private java.util.Random randGenerator;
+    NumberFormat nf = NumberFormat.getInstance();
 
 
     public String getType() {
@@ -85,15 +90,26 @@ public class busSample extends Sample {
 
     public void setNext(stopSample next) { this.next = next; }
 
+    public double getDistance() {
+        double distanceConversion = 70.0D;
+        return Double.valueOf(70.0D * Math.sqrt(Math.pow(current.getLatitude()
+                - next.getLatitude(), 2.0D) + Math.pow(current.getLongitude()
+                - next.getLongitude(), 2.0D)));
+    }
+    public double getTime() {
+        return Speed * getDistance();
+    }
+
     @Override
     public String toString() {
-        if (theroute != null) {
-            return  theroute.toString()+ "\n"+
-                    "Type: " + type +  "\n" +
+        if (theroute != null && current != null) {
+            return "Type: " + type +  "\n" +
                     "ID: " + ID + "\n" +
                     "Route: " + Route + "\n" +
-                    "Current stop: " + current + "\n" +
-                    //"Next stop: " + next + "\n" +
+                    "Current stop: " + current.getName() + "\n" +
+                    "Next stop: " + next.getName() + "\n" +
+                    "Distance: " + nf.format(getDistance()) + "\n" +
+                    "Time to the next stop: " + nf.format(getTime()) + "\n" +
                     "Riders: " + Riders + "\n" +
                     "Capacity: " + Capacity + "\n" +
                     "Speed: " + Speed;

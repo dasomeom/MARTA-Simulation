@@ -1,8 +1,10 @@
 package com.example.cs2340.marta;
 
 
+import java.io.Serializable;
+import java.util.List;
 
-class Sample {
+class Sample implements Serializable {
     private String type;
     private int ID;
     private int Route;
@@ -24,6 +26,24 @@ class Sample {
     private int Stop9;
     private double Latitude;
     private double Longitude;
+    private List<routeSample> routesamplelist;
+    private routeSample theroute;
+    private stopSample current;
+    private stopSample next;
+
+    public List<routeSample> getRoutesamplelist() { return routesamplelist; }
+
+    public routeSample getTheroute() { return theroute; }
+
+    public void setTheroute(routeSample theroute) { this.theroute = theroute; }
+
+    public stopSample getCurrent() { return current; }
+
+    public void setCurrent(stopSample current) { this.current = current; }
+
+    public stopSample getNext() { return next; }
+
+    public void setNext(stopSample next) { this.next = next; }
 
     public String getType() {
         return type;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Collection;
+import java.util.Queue;
 
 public class routeSample extends Sample {
     private String type = "Route";
@@ -31,88 +32,52 @@ public class routeSample extends Sample {
     private stopSample stp7;
     private stopSample stp8;
     private stopSample stp9;
-    stopSample[] arr = {stp0, stp1, stp2, stp3, stp4, stp5, stp6, stp7, stp8, stp9};
-    private LinkedList<stopSample> stops = new LinkedList(Arrays.asList(arr));
 
-    public stopSample getStp0() {
-        return stp0;
-    }
+    private Queue<stopSample> stops = new LinkedList<>();
 
-    public void setStp0(stopSample stp0) {
-        this.stp0 = stp0;
-    }
+    public Queue<stopSample> getStops() { return stops; }
 
-    public stopSample getStp1() {
-        return stp1;
-    }
+    public void setStops() { this.stops = stops; }
 
-    public void setStp1(stopSample stp1) {
-        this.stp1 = stp1;
-    }
+    public stopSample getStp0() { return stp0; }
 
-    public stopSample getStp2() {
-        return stp2;
-    }
+    public void setStp0(stopSample stp0) { this.stp0 = stp0; stops.add(stp0);}
 
-    public void setStp2(stopSample stp2) {
-        this.stp2 = stp2;
-    }
+    public stopSample getStp1() { return stp1; }
 
-    public stopSample getStp3() {
-        return stp3;
-    }
+    public void setStp1(stopSample stp1) { this.stp1 = stp1; stops.add(stp1);}
 
-    public void setStp3(stopSample stp3) {
-        this.stp3 = stp3;
-    }
+    public stopSample getStp2() { return stp2; }
 
-    public stopSample getStp4() {
-        return stp4;
-    }
+    public void setStp2(stopSample stp2) { this.stp2 = stp2; stops.add(stp2);}
 
-    public void setStp4(stopSample stp4) {
-        this.stp4 = stp4;
-    }
+    public stopSample getStp3() { return stp3; }
 
-    public stopSample getStp5() {
-        return stp5;
-    }
+    public void setStp3(stopSample stp3) { this.stp3 = stp3; stops.add(stp3);}
 
-    public void setStp5(stopSample stp5) {
-        this.stp5 = stp5;
-    }
+    public stopSample getStp4() { return stp4; }
 
-    public stopSample getStp6() {
-        return stp6;
-    }
+    public void setStp4(stopSample stp4) { this.stp4 = stp4; stops.add(stp4);}
 
-    public void setStp6(stopSample stp6) {
-        this.stp6 = stp6;
-    }
+    public stopSample getStp5() { return stp5; }
 
-    public stopSample getStp7() {
-        return stp7;
-    }
+    public void setStp5(stopSample stp5) { this.stp5 = stp5; stops.add(stp5);}
 
-    public void setStp7(stopSample stp7) {
-        this.stp7 = stp7;
-    }
+    public stopSample getStp6() { return stp6; }
 
-    public stopSample getStp8() {
-        return stp8;
-    }
+    public void setStp6(stopSample stp6) { this.stp6 = stp6; stops.add(stp6);}
 
-    public void setStp8(stopSample stp8) {
-        this.stp8 = stp8;
-    }
+    public stopSample getStp7() { return stp7; }
 
-    public stopSample getStp9() {
-        return stp9;
-    }
+    public void setStp7(stopSample stp7) { this.stp7 = stp7; stops.add(stp7);}
 
-    public void setStp9(stopSample stp9) {
-        this.stp9 = stp9;
-    }
+    public stopSample getStp8() { return stp8; }
+
+    public void setStp8(stopSample stp8) { this.stp8 = stp8; stops.add(stp8);}
+
+    public stopSample getStp9() { return stp9; }
+
+    public void setStp9(stopSample stp9) { this.stp9 = stp9; stops.add(stp9);}
 
     public String getType() { return type; }
 
@@ -174,19 +139,37 @@ public class routeSample extends Sample {
 
     @Override
     public String toString() {
-        return "Type: " + type + "\n" +
-                "ID: " + ID + "\n" +
-                "Index: " + Index + "\n" +
-                "Name: " + Name + "\n" +
-                "Stop0: " + Stop0 + "\n" +
-                "Stop1: " + Stop1 + "\n" +
-                "Stop2: " + Stop2 + "\n" +
-                "Stop3: " + Stop3 + "\n" +
-                "Stop4: " + Stop4 + "\n" +
-                "Stop5: " + Stop5 + "\n" +
-                "Stop6: " + Stop6 + "\n" +
-                "Stop7: " + Stop7 + "\n" +
-                "Stop8: " + Stop8 + "\n" +
-                "Stop9: " + Stop9 + "\n";
+        if (stp0 != null) {
+            return "Type: " + type + "\n" +
+                    "ID: " + ID + "\n" +
+                    "Index: " + Index + "\n" +
+                    "Name: " + Name + "\n" +
+                    "Stop0: " + Stop0 + "\n" +
+                    "Stop1: " + Stop1 + "\n" +
+                    "Stop2: " + Stop2 + "\n" +
+                    "Stop3: " + Stop3 + "\n" +
+                    "Stop4: " + Stop4 + "\n" +
+                    "Stop5: " + Stop5 + "\n" +
+                    "Stop6: " + Stop6 + "\n" +
+                    "Stop7: " + Stop7 + "\n" +
+                    "Stop8: " + Stop8 + "\n" +
+                    "Stop9: " + Stop9 + "\n";
+
+        } else {
+            return "Type: " + type + "\n" +
+                    "ID: " + ID + "\n" +
+                    "Index: " + Index + "\n" +
+                    "Name: " + Name + "\n" +
+                    "Stop0: " + Stop0 + "\n" +
+                    "Stop1: " + Stop1 + "\n" +
+                    "Stop2: " + Stop2 + "\n" +
+                    "Stop3: " + Stop3 + "\n" +
+                    "Stop4: " + Stop4 + "\n" +
+                    "Stop5: " + Stop5 + "\n" +
+                    "Stop6: " + Stop6 + "\n" +
+                    "Stop7: " + Stop7 + "\n" +
+                    "Stop8: " + Stop8 + "\n" +
+                    "Stop9: " + Stop9 + "\n";
+        }
     }
 }
