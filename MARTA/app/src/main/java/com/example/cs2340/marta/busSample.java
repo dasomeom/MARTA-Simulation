@@ -2,9 +2,12 @@ package com.example.cs2340.marta;
 
 import java.text.NumberFormat;
 import java.util.List;
+import java.util.Random;
 
 
 public class busSample extends Sample {
+    Random rand = new Random();
+    NumberFormat nf = NumberFormat.getInstance();
     private String type = "Bus";
     private int ID;
     private int Route;
@@ -18,8 +21,10 @@ public class busSample extends Sample {
     private stopSample next;
     private double distance;
     private double time;
-    private java.util.Random randGenerator;
-    NumberFormat nf = NumberFormat.getInstance();
+    //int randomNum = rand.nextInt((max - min) + 1) + min;
+    private int exiting = rand.nextInt(4) + 2;
+    private int boarding = rand.nextInt(10 - Riders);
+
 
 
     public String getType() {
@@ -51,7 +56,7 @@ public class busSample extends Sample {
     }
 
     public int getRiders() {
-        return Riders;
+        return Riders - exiting + boarding;
     }
 
     public void setRiders(int riders) {
@@ -110,7 +115,9 @@ public class busSample extends Sample {
                     "Next stop: " + next.getName() + "\n" +
                     "Distance: " + nf.format(getDistance()) + "\n" +
                     "Time to the next stop: " + nf.format(getTime()) + "\n" +
-                    "Riders: " + Riders + "\n" +
+                    "Exiting passangers: " + exiting + "\n" +
+                    "Boarding passangers: " + boarding + "\n" +
+                    "Riders: " + getRiders() + "\n" +
                     "Capacity: " + Capacity + "\n" +
                     "Speed: " + Speed;
         } else {
