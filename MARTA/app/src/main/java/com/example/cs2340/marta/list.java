@@ -38,12 +38,6 @@ public class list extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
-
-
-
-
-
-
     public void onClick(View v) {
         if (v == buttontolist) {
             Intent intLogout = new Intent(this, System.class);

@@ -48,28 +48,20 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         readStopData();
         for (routeSample route : routelist) {
             route.setStopsamplelist(stoplist);
-            for (stopSample astop : stoplist) {
-                if (astop.getID() == route.getStop0()) {route.setStp0(astop);}
-                else if (astop.getID() == route.getStop0()) {route.setStp0(astop);}
-                else if (astop.getID() == route.getStop1()) {route.setStp1(astop);}
-                else if (astop.getID() == route.getStop2()) {route.setStp2(astop);}
-                else if (astop.getID() == route.getStop3()) {route.setStp3(astop);}
-                else if (astop.getID() == route.getStop4()) {route.setStp4(astop);}
-                else if (astop.getID() == route.getStop5()) {route.setStp5(astop);}
-                else if (astop.getID() == route.getStop6()) {route.setStp6(astop);}
-                else if (astop.getID() == route.getStop7()) {route.setStp7(astop);}
-                else if (astop.getID() == route.getStop8()) {route.setStp8(astop);}
-                else if (astop.getID() == route.getStop9()) {route.setStp9(astop);}
+            for (int i = 0; i < route.getStopdata().size(); i++) {
+                for (stopSample astop : stoplist) {
+                    if (route.getStopdata().get(i) == astop.getID()) {
+                        route.getStoplist().add(astop);
+                        route.getStops().add(astop); }
+                }
             }
         }
         for (busSample bus : buslist) {
-            bus.setRoutesamplelist(routelist);
             for (routeSample aroute : routelist) {
                 if (aroute.getID() == bus.getRoute()) {
                     bus.setTheroute(aroute);
                 }
             }
-
         }
 
 
@@ -86,10 +78,15 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 Sample aasample = samples.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("aaSample", (Serializable) aasample);
-
-                Intent intlist = new Intent (view.getContext(), list.class);
-                intlist.putExtras(bundle);
-                startActivity(intlist);
+                if (aasample.getType().equals("Bus")) {
+                    Intent intlista = new Intent (view.getContext(), listbus.class);
+                    intlista.putExtras(bundle);
+                    startActivity(intlista);
+                } else {
+                    Intent intlist = new Intent(view.getContext(), list.class);
+                    intlist.putExtras(bundle);
+                    startActivity(intlist);
+                }
 
             }
         });
@@ -189,16 +186,26 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 sample.setID(Integer.parseInt(tokens[0]));
                 sample.setIndex(Integer.parseInt(tokens[1]));
                 sample.setName(tokens[2]);
-                sample.setStop0(Integer.parseInt(tokens[3]));
-                sample.setStop1(Integer.parseInt(tokens[4]));
-                sample.setStop2(Integer.parseInt(tokens[5]));
-                sample.setStop3(Integer.parseInt(tokens[6]));
-                sample.setStop4(Integer.parseInt(tokens[7]));
-                sample.setStop5(Integer.parseInt(tokens[8]));
-                sample.setStop6(Integer.parseInt(tokens[9]));
-                sample.setStop7(Integer.parseInt(tokens[10]));
-                sample.setStop8(Integer.parseInt(tokens[11]));
-                sample.setStop9(Integer.parseInt(tokens[12]));
+                sample.getStopdata().add(Integer.parseInt(tokens[3]));
+                sample.getStopdata().add(Integer.parseInt(tokens[4]));
+                sample.getStopdata().add(Integer.parseInt(tokens[5]));
+                sample.getStopdata().add(Integer.parseInt(tokens[6]));
+                sample.getStopdata().add(Integer.parseInt(tokens[7]));
+                sample.getStopdata().add(Integer.parseInt(tokens[8]));
+                sample.getStopdata().add(Integer.parseInt(tokens[9]));
+                sample.getStopdata().add(Integer.parseInt(tokens[10]));
+                sample.getStopdata().add(Integer.parseInt(tokens[11]));
+                sample.getStopdata().add(Integer.parseInt(tokens[12]));
+                //sample.setStop0(Integer.parseInt(tokens[3]));
+                //sample.setStop1(Integer.parseInt(tokens[4]));
+                //sample.setStop2(Integer.parseInt(tokens[5]));
+                //sample.setStop3(Integer.parseInt(tokens[6]));
+                //sample.setStop4(Integer.parseInt(tokens[7]));
+                //sample.setStop5(Integer.parseInt(tokens[8]));
+                //sample.setStop6(Integer.parseInt(tokens[9]));
+                //sample.setStop7(Integer.parseInt(tokens[10]));
+                //sample.setStop8(Integer.parseInt(tokens[11]));
+                //sample.setStop9(Integer.parseInt(tokens[12]));
 
                 // Adding object to a class
                 samples.add(sample);
