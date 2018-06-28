@@ -20,6 +20,9 @@ public class busSample extends Sample {
     private stopSample next;
     private double distance;
     private int time;
+    private int tempexit;
+    private int tempboard;
+    private int newrider;
 
     //int randomNum = rand.nextInt((max - min) + 1) + min;
 
@@ -60,15 +63,28 @@ public class busSample extends Sample {
     }
 
     public int exiting() {
-        return Riders;
+        tempexit = rand.nextInt(4) + 2;
+        if (tempexit >= Riders) {
+            tempexit = Riders;
+        }
+        return tempexit;
     }
 
     public int boarding() {
-        return exiting() + 1;
+        int available = Capacity - (Riders - tempexit);
+        tempboard = rand.nextInt(11);
+        if (tempboard > available) {
+            tempboard = available;
+        }
+        return tempboard;
     }
 
-    public int newrider() {
-        return Riders - exiting() + boarding();
+    public int getNewrider() {
+        return newrider;
+    }
+
+    public void setNewrider(int newrider) {
+        this.newrider = newrider;
     }
 
     public int getCapacity() { return Capacity; }
@@ -113,9 +129,9 @@ public class busSample extends Sample {
                     "Distance: " + nf.format(getDistance()) + " miles" + "\n" +
                     "Time to the next stop: " + nf.format(getTime()) + " mins" + "\n" +
                     "Previous rider" + Riders + "\n" +
-                    "Exiting passangers: " + exiting() + "\n" +
-                    "Boarding passangers: " + boarding() + "\n" +
-                    "Riders: " + newrider() + "\n" +
+                    "Exiting passangers: " + tempexit + "\n" +
+                    "Boarding passangers: " + tempboard + "\n" +
+                    "Riders: " + newrider + "\n" +
                     "Capacity: " + Capacity + "\n" +
                     "Speed: " + Speed + " mph";
         } else {
