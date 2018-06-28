@@ -20,7 +20,6 @@ public class busSample extends Sample {
     private stopSample next;
     private double distance;
     private int time;
-    private int newrider;
 
     //int randomNum = rand.nextInt((max - min) + 1) + min;
 
@@ -60,37 +59,18 @@ public class busSample extends Sample {
         Riders = riders;
     }
 
-    public int getNewrider() {
-        return newrider;
-    }
-
-    public void setNewrider(int newrider) {
-        this.newrider = newrider;
-    }
-
     public int exiting() {
-        int exit;
-        if (Riders == 0) {
-            exit = 0;
-        } else if ( Riders < 2) {
-            exit = rand.nextInt(Riders + 1);
-        } else if (Riders < 7) {
-            exit = rand.nextInt(Riders - 1) + 2;
-        } else {
-            exit = rand.nextInt(4) + 2;
-        }
-        return exit;
+        return Riders;
     }
 
     public int boarding() {
-        int available = Capacity - Riders + exiting();
-        if (available == 0) {
-            return 0;
-        } else {
-            return rand.nextInt(available + 1);
-        }
-
+        return exiting() + 1;
     }
+
+    public int newrider() {
+        return Riders - exiting() + boarding();
+    }
+
     public int getCapacity() { return Capacity; }
 
     public void setCapacity(int capacity) { Capacity = capacity; }
@@ -135,7 +115,7 @@ public class busSample extends Sample {
                     "Previous rider" + Riders + "\n" +
                     "Exiting passangers: " + exiting() + "\n" +
                     "Boarding passangers: " + boarding() + "\n" +
-                    "Riders: " + getNewrider() + "\n" +
+                    "Riders: " + newrider() + "\n" +
                     "Capacity: " + Capacity + "\n" +
                     "Speed: " + Speed + " mph";
         } else {
