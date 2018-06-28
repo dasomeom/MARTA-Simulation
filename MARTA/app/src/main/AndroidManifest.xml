@@ -19,7 +19,8 @@
         <activity android:name=".Login" />
         <activity android:name=".Register" />
         <activity android:name=".System" />
-        <activity android:name=".list"></activity>
+        <activity android:name=".list" />
+        <activity android:name=".listbus"></activity>
     </application>
 
 </manifest>
