@@ -1,79 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/gradient">
 
-    <RelativeLayout
-        android:layout_width="395dp"
-        android:layout_height="586dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints">
+    <EditText
+        android:id="@+id/first"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"/>
 
-        <EditText
-            android:id="@+id/first"
-            android:layout_width="340dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="First Name"
-            android:inputType="textPersonName"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="80dp"
-            android:layout_centerHorizontal="true"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="67dp" />
+    <EditText
+        android:id="@+id/last"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:hint="Last Name"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/usemail"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true" />
 
-        <EditText
-            android:id="@+id/last"
-            android:layout_width="340dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp"
-            android:hint="Last Name"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="23dp"
-            tools:layout_editor_absoluteY="138dp" />
-        <EditText
-            android:id="@+id/usemail"
-            android:layout_width="340dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="160dp"
-            android:layout_centerHorizontal="true"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="67dp" />
+    <EditText
+        android:id="@+id/psword"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPersonName"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true" />
 
-        <EditText
-            android:id="@+id/psword"
-            android:layout_width="340dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="password"
-            android:inputType="textPersonName"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="200dp"
-            android:layout_centerHorizontal="true"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="67dp" />
+    <Button
+        android:id="@+id/btRegister"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="190dp"
+        android:background="@drawable/button"
+        android:text="Register"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/btRegister"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:text="Register"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="300dp"
-            android:layout_centerHorizontal="true"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="67dp"  />
-    </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/backmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="108dp"
+        android:text="Go back to main menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/backmain"
+        android:layout_centerHorizontal="true"
+        android:text="or" />
+</RelativeLayout>

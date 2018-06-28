@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(intReg);
         }
         if (v == toMain) {
-            Intent intMain = new Intent (this, MainActivity.class);
+            Intent intMain = new Intent (this, Main.class);
             startActivity(intMain);
         }
     }

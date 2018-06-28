@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class Main extends AppCompatActivity implements View.OnClickListener {
     private Button buttonLogin;
     private Button buttonRegister;
 
