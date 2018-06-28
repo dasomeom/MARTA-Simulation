@@ -2,9 +2,12 @@ package com.example.cs2340.marta;
 
 import java.text.NumberFormat;
 import java.util.List;
+import java.util.Random;
 
 
 public class busSample extends Sample {
+    Random rand = new Random();
+    NumberFormat nf = NumberFormat.getInstance();
     private String type = "Bus";
     private int ID;
     private int Route;
@@ -12,15 +15,13 @@ public class busSample extends Sample {
     private int Riders;
     private int Capacity;
     private int Speed;
-    private List<routeSample> routesamplelist;
     private routeSample theroute;
     private stopSample current;
     private stopSample next;
     private double distance;
-    private double time;
-    private java.util.Random randGenerator;
-    NumberFormat nf = NumberFormat.getInstance();
+    private int time;
 
+    //int randomNum = rand.nextInt((max - min) + 1) + min;
 
     public String getType() {
         return type;
@@ -58,26 +59,27 @@ public class busSample extends Sample {
         Riders = riders;
     }
 
-    public int getCapacity() {
-        return Capacity;
+    public int exiting() {
+        return Riders;
     }
 
-    public void setCapacity(int capacity) {
-        Capacity = capacity;
+    public int boarding() {
+        return exiting() + 1;
     }
 
-    public int getSpeed() {
-        return Speed;
+    public int newrider() {
+        return Riders - exiting() + boarding();
     }
+
+    public int getCapacity() { return Capacity; }
+
+    public void setCapacity(int capacity) { Capacity = capacity; }
+
+    public int getSpeed() { return Speed; }
 
     public void setSpeed(int speed) {
         Speed = speed;
     }
-
-    public List<routeSample> getRoutesamplelist() { return routesamplelist; }
-
-    public void setRoutesamplelist(List<routeSample> routesamplelist) { this.routesamplelist = routesamplelist; }
-
     public routeSample getTheroute() { return theroute; }
 
     public void setTheroute(routeSample theroute) { this.theroute = theroute; }
@@ -91,13 +93,13 @@ public class busSample extends Sample {
     public void setNext(stopSample next) { this.next = next; }
 
     public double getDistance() {
-        double distanceConversion = 70.0D;
-        return Double.valueOf(70.0D * Math.sqrt(Math.pow(current.getLatitude()
+        final double distanceConversion = 70.0D;
+        return Double.valueOf(distanceConversion * Math.sqrt(Math.pow(current.getLatitude()
                 - next.getLatitude(), 2.0D) + Math.pow(current.getLongitude()
                 - next.getLongitude(), 2.0D)));
     }
-    public double getTime() {
-        return Speed * getDistance();
+    public int getTime() {
+        return 1 + (((int) getDistance() * 60) / Speed);
     }
 
     @Override
@@ -108,18 +110,22 @@ public class busSample extends Sample {
                     "Route: " + Route + "\n" +
                     "Current stop: " + current.getName() + "\n" +
                     "Next stop: " + next.getName() + "\n" +
-                    "Distance: " + nf.format(getDistance()) + "\n" +
-                    "Time to the next stop: " + nf.format(getTime()) + "\n" +
-                    "Riders: " + Riders + "\n" +
+                    "Distance: " + nf.format(getDistance()) + " miles" + "\n" +
+                    "Time to the next stop: " + nf.format(getTime()) + " mins" + "\n" +
+                    "Previous rider" + Riders + "\n" +
+                    "Exiting passangers: " + exiting() + "\n" +
+                    "Boarding passangers: " + boarding() + "\n" +
+                    "Riders: " + newrider() + "\n" +
                     "Capacity: " + Capacity + "\n" +
-                    "Speed: " + Speed;
+                    "Speed: " + Speed + " mph";
         } else {
             return "Type: " + type +  "\n" +
                     "ID: " + ID + "\n" +
                     "Route: " + Route + "\n" +
+                    theroute + "\n" +
                     "Current stop: " + current + "\n" +
                     //"Next stop: " + next + "\n" +
-                    "Riders: " + Riders + "\n" +
+                    "Riders: " + getRiders() + "\n" +
                     "Capacity: " + Capacity + "\n" +
                     "Speed: " + Speed;
         }
