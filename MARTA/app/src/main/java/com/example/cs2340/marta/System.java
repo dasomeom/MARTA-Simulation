@@ -20,20 +20,21 @@ import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 public class System extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonLogout;
+    private Button buttonSimulation;
     private SampleAdapter adapter;
     private ListView lv;
-    private List<Sample> lsam;
     private List<Sample> samples = new ArrayList<>();
     private List<busSample> buslist = new ArrayList<>();
     private List<routeSample> routelist = new ArrayList<>();
     private List<stopSample> stoplist = new ArrayList<>();
-
 
 
     @Override
@@ -42,6 +43,9 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_system);
         buttonLogout= (Button) findViewById(R.id.mslogout);
         buttonLogout.setOnClickListener(this);
+        buttonSimulation= (Button) findViewById(R.id.simulation);
+        buttonSimulation.setOnClickListener(this);
+
 
         readBusData();
         readRouteData();
@@ -63,14 +67,10 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 }
             }
         }
-
-
-
         lv = (ListView)findViewById(R.id.listview);
 
         adapter = new SampleAdapter(this, R.layout.tvlayout, samples);
         lv.setAdapter(adapter);
-
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -87,10 +87,8 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                     intlist.putExtras(bundle);
                     startActivity(intlist);
                 }
-
             }
         });
-
     }
 
 
@@ -99,6 +97,13 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         if (v == buttonLogout) {
             Intent intLogout = new Intent(this, Main.class);
             startActivity(intLogout);
+        }
+        if (v == buttonSimulation) {
+            Bundle bundleBus = new Bundle();
+            bundleBus.putSerializable("busList", (Serializable) buslist);
+            Intent intSimulation = new Intent(this, Simulation.class);
+            intSimulation.putExtras(bundleBus);
+            startActivity(intSimulation);
         }
     }
 
@@ -109,12 +114,10 @@ public class System extends AppCompatActivity implements View.OnClickListener {
     private void readBusData() {
 
         InputStream is = getResources().openRawResource(R.raw.busdata);
-
         // Reads text from character-input stream, buffering characters for efficient reading
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(is, Charset.forName("UTF-8"))
         );
-
         // Initialization
         String line = "";
 
@@ -142,11 +145,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 // Adding object to a class
                 samples.add(sample);
                 buslist.add(sample);
-                // Log the object
-                Log.d("System", "Just created: " + sample);
             }
-
-
         } catch (IOException e) {
             // Logs error with priority level
             Log.wtf("System", "Error reading data file on line" + line, e);
@@ -154,13 +153,10 @@ public class System extends AppCompatActivity implements View.OnClickListener {
             // Prints throwable details
             e.printStackTrace();
         }
-
     }
 
     private void readRouteData() {
-
         InputStream is = getResources().openRawResource(R.raw.routedata);
-
         // Reads text from character-input stream, buffering characters for efficient reading
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(is, Charset.forName("UTF-8"))
@@ -176,7 +172,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
 
             // If buffer is not empty
             while ((line = reader.readLine()) != null) {
-                Log.d("System ","Line: " + line);
                 // use comma as separator columns of CSV
                 String[] tokens = line.split(",");
                 // Read the data
@@ -210,8 +205,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 // Adding object to a class
                 samples.add(sample);
                 routelist.add(sample);
-                // Log the object
-                Log.d("System", "Just created: " + sample);
             }
         } catch (IOException e) {
             // Logs error with priority level
@@ -242,7 +235,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
 
             // If buffer is not empty
             while ((line = reader.readLine()) != null) {
-                Log.d("System ","Line: " + line);
                 // use comma as separator columns of CSV
                 String[] tokens = line.split(",");
                 // Read the data
@@ -257,8 +249,6 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 // Adding object to a class
                 samples.add(sample);
                 stoplist.add(sample);
-                // Log the object
-                Log.d("System", "Just created: " + sample);
             }
 
 

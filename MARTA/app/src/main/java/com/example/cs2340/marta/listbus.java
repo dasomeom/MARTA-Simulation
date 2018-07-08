@@ -35,6 +35,7 @@ public class listbus extends AppCompatActivity implements View.OnClickListener {
             textView.setText(aaa.toString());
         }
         aaa.setRiders(aaa.getNewrider());
+        aaa.setInitialTime(aaa.getOverallTime());
 
     }
 
@@ -52,6 +53,7 @@ public class listbus extends AppCompatActivity implements View.OnClickListener {
             textView.setText(aaa.toString());
         }
         aaa.setRiders(aaa.getNewrider());
+        aaa.setInitialTime(aaa.getOverallTime());
 
     }
 }

@@ -8,21 +8,20 @@ import java.util.Collection;
 import java.util.Queue;
 
 public class routeSample extends Sample {
-    private String type = "Route";
+    private String type = "ROUTE";
     private int ID;
     private int Index;
     private String Name;
     private List<stopSample> stopsamplelist;
     private ArrayList<Integer> stopdata = new ArrayList<>();
     private ArrayList<stopSample> stoplist = new ArrayList<>();
+    private Queue<stopSample> stops = new LinkedList<>();
 
     public ArrayList<stopSample> getStoplist() { return stoplist; }
 
     public void setStopdata(ArrayList<Integer> stopdata) { this.stopdata = stopdata; }
 
     public ArrayList<Integer> getStopdata() { return stopdata; }
-
-    private Queue<stopSample> stops = new LinkedList<>();
 
     public Queue<stopSample> getStops() { return stops; }
 

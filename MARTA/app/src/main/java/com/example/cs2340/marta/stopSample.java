@@ -1,7 +1,7 @@
 package com.example.cs2340.marta;
 
 public class stopSample extends Sample {
-    private String type = "Stop";
+    private String type = "STOP";
     private int ID;
     private String Name;
     private int Riders;
@@ -53,6 +53,7 @@ public class stopSample extends Sample {
     public void setLongitude(double longitude) {
         Longitude = longitude;
     }
+
 
     @Override
     public String toString() {
