@@ -20,7 +20,8 @@
         <activity android:name=".Register" />
         <activity android:name=".System" />
         <activity android:name=".list" />
-        <activity android:name=".listbus"></activity>
+        <activity android:name=".listbus" />
+        <activity android:name=".Simulation" />
     </application>
 
 </manifest>

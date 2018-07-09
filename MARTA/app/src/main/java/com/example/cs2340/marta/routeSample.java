@@ -8,13 +8,26 @@ import java.util.Collection;
 import java.util.Queue;
 
 public class routeSample extends Sample {
-    private String type = "Route";
-    private int ID;
     private int Index;
     private String Name;
     private List<stopSample> stopsamplelist;
     private ArrayList<Integer> stopdata = new ArrayList<>();
     private ArrayList<stopSample> stoplist = new ArrayList<>();
+    private Queue<stopSample> stops = new LinkedList<>();
+
+
+    public routeSample() {
+    }
+
+    public routeSample(String type, int ID, int index, String name, List<stopSample> stopsamplelist, ArrayList<Integer> stopdata, ArrayList<stopSample> stoplist, Queue<stopSample> stops) {
+        super(type, ID);
+        Index = index;
+        Name = name;
+        this.stopsamplelist = stopsamplelist;
+        this.stopdata = stopdata;
+        this.stoplist = stoplist;
+        this.stops = stops;
+    }
 
     public ArrayList<stopSample> getStoplist() { return stoplist; }
 
@@ -22,15 +35,8 @@ public class routeSample extends Sample {
 
     public ArrayList<Integer> getStopdata() { return stopdata; }
 
-    private Queue<stopSample> stops = new LinkedList<>();
-
     public Queue<stopSample> getStops() { return stops; }
 
-    public String getType() { return type; }
-
-    public int getID() { return ID; }
-
-    public void setID(int ID) { this.ID = ID; }
 
     public int getIndex() { return Index; }
 
@@ -46,8 +52,7 @@ public class routeSample extends Sample {
 
     @Override
     public String toString() {
-            return "Type: " + type + "\n" +
-                    "ID: " + ID + "\n" +
+            return this.getType()  +" #" + this.getID() + "\n" +
                     "Index: " + Index + "\n" +
                     "Name: " + Name + "\n" +
                     stopdata + "\n" +
