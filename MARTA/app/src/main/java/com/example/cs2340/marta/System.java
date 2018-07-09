@@ -78,7 +78,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 Sample aasample = samples.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("aaSample", (Serializable) aasample);
-                if (aasample.getType().equals("Bus")) {
+                if (aasample.getType().equals("BUS")) {
                     Intent intlista = new Intent (view.getContext(), listbus.class);
                     intlista.putExtras(bundle);
                     startActivity(intlista);
@@ -135,6 +135,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 busSample sample = new busSample();
 
                 // Setters
+                sample.setType("BUS");
                 sample.setID(Integer.parseInt(tokens[0]));
                 sample.setRoute(Integer.parseInt(tokens[1]));
                 sample.setLocation(Integer.parseInt(tokens[2]));
@@ -178,6 +179,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 routeSample sample = new routeSample();
 
                 // Setters
+                sample.setType("ROUTE");
                 sample.setID(Integer.parseInt(tokens[0]));
                 sample.setIndex(Integer.parseInt(tokens[1]));
                 sample.setName(tokens[2]);
@@ -241,6 +243,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 stopSample sample = new stopSample();
 
                 // Setters
+                sample.setType("STOP");
                 sample.setID(Integer.parseInt(tokens[0]));
                 sample.setName((tokens[1]));
                 sample.setRiders(Integer.parseInt(tokens[2]));

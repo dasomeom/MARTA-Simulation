@@ -8,9 +8,8 @@ import java.util.Random;
 
 public class busSample extends Sample implements Comparable<busSample> {
     Random rand = new Random();
-    NumberFormat nf = NumberFormat.getInstance();
-    private String type = "Bus";
-    private int ID;
+    //private String type = "Bus";
+    //private int ID;
     private int Route;
     private int Location;
     private int Riders;
@@ -27,13 +26,34 @@ public class busSample extends Sample implements Comparable<busSample> {
     private int initialTime;
     private int overallTime;
 
+    public busSample() {
+
+    }
+    public busSample(String type, int ID, Random rand, int route, int location, int riders, int capacity, int speed, routeSample theroute, stopSample current, stopSample next, double distance, int time, int tempexit, int tempboard, int newrider, int initialTime, int overallTime) {
+        super(type, ID);
+        this.rand = rand;
+        Route = route;
+        Location = location;
+        Riders = riders;
+        Capacity = capacity;
+        Speed = speed;
+        this.theroute = theroute;
+        this.current = current;
+        this.next = next;
+        this.distance = distance;
+        this.time = time;
+        this.tempexit = tempexit;
+        this.tempboard = tempboard;
+        this.newrider = newrider;
+        this.initialTime = initialTime;
+        this.overallTime = overallTime;
+    }
+
     //int randomNum = rand.nextInt((max - min) + 1) + min;
 
-    public String getType() {return type; }
+    //public int getID() { return ID; }
 
-    public int getID() { return ID; }
-
-    public void setID(int ID) { this.ID = ID; }
+    //public void setID(int ID) { this.ID = ID; }
 
     public int getRoute() { return Route; }
 
@@ -98,17 +118,17 @@ public class busSample extends Sample implements Comparable<busSample> {
 
     public double getDistance() {
         final double distanceConversion = 70.0D;
-        return Double.valueOf(distanceConversion * Math.sqrt(Math.pow(current.getLatitude()
+        return (double) Math.round(Double.valueOf(distanceConversion * Math.sqrt(Math.pow(current.getLatitude()
                 - next.getLatitude(), 2.0D) + Math.pow(current.getLongitude()
-                - next.getLongitude(), 2.0D)));
+                - next.getLongitude(), 2.0D)))*1000)/1000.000;
     }
-    public int getTime() { return 1 + (((int) getDistance() * 60) / Speed); }
+    public int getTime() { return (1 + (((int) getDistance() * 60) / Speed)); }
 
     public int compareTo(busSample compareBus) {
         if (getOverallTime() == compareBus.getOverallTime()) {
-            if (ID > compareBus.getID()) {
+            if (this.getID() > compareBus.getID()) {
                 return 1;
-            } else if (ID < compareBus.getID()) {
+            } else if (this.getID() < compareBus.getID()) {
                 return -1;
             }
         } else if (getOverallTime() > compareBus.getOverallTime()) {
@@ -123,11 +143,11 @@ public class busSample extends Sample implements Comparable<busSample> {
     public String toString() {
         if (theroute != null && current != null) {
             return  "Overall Operation: " + getOverallTime() + " mins" + "\n" +
-                    type  +" #" + ID + " on Route " + Route + "\n" +
+                    this.getType()  +" #" + this.getID() + " on Route " + Route + "\n" +
                     "Current stop: " + current.getName() + "\n" +
                     "Next stop: " + next.getName() + "\n" +
-                    "Distance: " + nf.format(getDistance()) + " miles" + "\n" +
-                    "Time to the next stop: " + nf.format(getTime()) + " mins" + "\n" +
+                    "Distance: " + getDistance() + " miles" + "\n" +
+                    "Time to the next stop: " + getTime() + " mins" + "\n" +
                     "Previous rider: " + Riders + "\n" +
                     "Exiting: " + tempexit + " Boarding: " + tempboard + "\n" +
                     "Riders: " + newrider + "\n" +

@@ -1,19 +1,27 @@
 package com.example.cs2340.marta;
 
 public class stopSample extends Sample {
-    private String type = "STOP";
-    private int ID;
+    //private String type = "STOP";
+    //private int ID;
     private String Name;
     private int Riders;
     private double Latitude;
     private double Longitude;
 
+    public stopSample() {
 
-
-    public String getType() {
-        return type;
     }
 
+    public stopSample(String type, int ID, String name, int riders, double latitude, double longitude) {
+        super(type, ID);
+        Name = name;
+        Riders = riders;
+        Latitude = latitude;
+        Longitude = longitude;
+    }
+
+
+    /**
     public int getID() {
         return ID;
     }
@@ -21,6 +29,7 @@ public class stopSample extends Sample {
     public void setID(int ID) {
         this.ID = ID;
     }
+     **/
 
     public String getName() {
         return Name;
@@ -57,11 +66,10 @@ public class stopSample extends Sample {
 
     @Override
     public String toString() {
-        return "Type: " + type + "\n" +
-                "ID: " + ID + "\n" +
+        return this.getType()  +" #" + this.getID() +
                 "Name: " + Name + "\n" +
-                "Riders: " + Riders + "\n" +
-                "Latitude: " + Latitude + "\n" +
+                "Riders: " + Riders +"\n" +
+                "Latitude: " + Latitude +"\n" +
                 "Longitude: " + Longitude;
     }
 }
