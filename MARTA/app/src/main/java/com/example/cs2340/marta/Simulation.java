@@ -26,7 +26,6 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
 
 
     private Button buttontolist, refresh, restart;
-    private Button retrieve;
     private TextView textView;
     private TextView textNext;
     private List<busSample> busImport = new ArrayList<>();
@@ -36,9 +35,9 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
     private PriorityQueue<busSample> newBuses = new PriorityQueue<>();
     private String newBus;
     private String nextBus;
-    private busSample aBus;
     private String tempString;
     private String tempNext;
+    private boolean newStart = false;
 
 
     @Override
@@ -85,7 +84,10 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
             newBus = tempString;
             nextBus = tempNext;
-            newBuses = buses;
+            if (newBuses == null) {
+                newBuses = buses;
+                newStart = true;
+            }
             if (resumeBuses != null) {
                 buses = resumeBuses;
             }
@@ -180,13 +182,22 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             buses.add(aBus);
             busSample ex = buses.peek();
             int difTime = ex.getOverallTime() - aBus.getInitialTime();
-            tempNext = "Bus #"+ex.getID()+" will arrive to "+ex.getCurrent().getName()+" in "+difTime+" mins";
+            tempNext = "Bus #" + ex.getID() + " will arrive to " + ex.getCurrent().getName() + " in " + difTime + " mins";
             textNext.setText(tempNext);
+
         }
         if (v == restart) {
-            textView.setText(newBus);
-            textNext.setText(nextBus);
-            buses = newBuses;
+            buses = new PriorityQueue<>();
+            busImport = (ArrayList<busSample>) getIntent().getExtras().getSerializable("busList");
+            for (busSample bus : busImport) {
+                stopSample thisone = bus.getTheroute().getStops().remove();
+                bus.getTheroute().getStops().add(thisone);
+                bus.setCurrent(thisone);
+                bus.setNext(bus.getTheroute().getStops().peek());
+                bus.setInitialTime(0);
+                buses.add(bus);
+            }
+
 
         }
     }
