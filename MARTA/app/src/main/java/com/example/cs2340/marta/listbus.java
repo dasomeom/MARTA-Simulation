@@ -31,10 +31,11 @@ public class listbus extends AppCompatActivity implements View.OnClickListener {
             stopSample thisone = aaa.getTheroute().getStops().remove();
             aaa.getTheroute().getStops().add(thisone);
             aaa.setCurrent(thisone);
-            aaa.setNext(aasample.getTheroute().getStops().peek());
+            aaa.setNext(aaa.getTheroute().getStops().peek());
             textView.setText(aaa.toString());
         }
         aaa.setRiders(aaa.getNewrider());
+        aaa.setInitialTime(aaa.getOverallTime());
 
     }
 
@@ -47,11 +48,12 @@ public class listbus extends AppCompatActivity implements View.OnClickListener {
             stopSample thisone = aaa.getTheroute().getStops().remove();
             aaa.getTheroute().getStops().add(thisone);
             aaa.setCurrent(thisone);
-            aaa.setNext(aasample.getTheroute().getStops().peek());
+            aaa.setNext(aaa.getTheroute().getStops().peek());
             aaa.setNewrider(aaa.getRiders() - aaa.exiting() + aaa.boarding());
             textView.setText(aaa.toString());
         }
         aaa.setRiders(aaa.getNewrider());
+        aaa.setInitialTime(aaa.getOverallTime());
 
     }
 }
