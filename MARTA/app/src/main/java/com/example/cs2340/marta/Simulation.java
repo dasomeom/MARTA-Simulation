@@ -26,6 +26,7 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
 
 
     private Button buttontolist, refresh, restart;
+    private Button retrieve;
     private TextView textView;
     private TextView textNext;
     private List<busSample> busImport = new ArrayList<>();
@@ -35,9 +36,9 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
     private PriorityQueue<busSample> newBuses = new PriorityQueue<>();
     private String newBus;
     private String nextBus;
+    private busSample aBus;
     private String tempString;
     private String tempNext;
-    private boolean newStart = false;
 
 
     @Override
@@ -84,13 +85,14 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
             newBus = tempString;
             nextBus = tempNext;
-            if (newBuses == null) {
-                newBuses = buses;
-                newStart = true;
+            for (busSample buss : buses) {
+                newBuses.add(buss);
             }
             if (resumeBuses != null) {
                 buses = resumeBuses;
             }
+        } else {
+            textView.setText("error on loading buses.");
         }
 
     }
@@ -182,11 +184,12 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             buses.add(aBus);
             busSample ex = buses.peek();
             int difTime = ex.getOverallTime() - aBus.getInitialTime();
-            tempNext = "Bus #" + ex.getID() + " will arrive to " + ex.getCurrent().getName() + " in " + difTime + " mins";
+            tempNext = "Bus #"+ex.getID()+" will arrive to "+ex.getCurrent().getName()+" in "+difTime+" mins";
             textNext.setText(tempNext);
-
         }
         if (v == restart) {
+            //textView.setText(newBus);
+            //textNext.setText(nextBus);
             buses = new PriorityQueue<>();
             busImport = (ArrayList<busSample>) getIntent().getExtras().getSerializable("busList");
             for (busSample bus : busImport) {
@@ -197,7 +200,6 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
                 bus.setInitialTime(0);
                 buses.add(bus);
             }
-
 
         }
     }
