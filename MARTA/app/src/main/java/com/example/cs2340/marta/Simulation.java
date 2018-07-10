@@ -85,10 +85,14 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
             newBus = tempString;
             nextBus = tempNext;
-            newBuses = buses;
+            for (busSample buss : buses) {
+                newBuses.add(buss);
+            }
             if (resumeBuses != null) {
                 buses = resumeBuses;
             }
+        } else {
+            textView.setText("error on loading buses.");
         }
 
     }
@@ -184,9 +188,18 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
         }
         if (v == restart) {
-            textView.setText(newBus);
-            textNext.setText(nextBus);
-            buses = newBuses;
+            //textView.setText(newBus);
+            //textNext.setText(nextBus);
+            buses = new PriorityQueue<>();
+            busImport = (ArrayList<busSample>) getIntent().getExtras().getSerializable("busList");
+            for (busSample bus : busImport) {
+                stopSample thisone = bus.getTheroute().getStops().remove();
+                bus.getTheroute().getStops().add(thisone);
+                bus.setCurrent(thisone);
+                bus.setNext(bus.getTheroute().getStops().peek());
+                bus.setInitialTime(0);
+                buses.add(bus);
+            }
 
         }
     }
