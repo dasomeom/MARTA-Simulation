@@ -188,8 +188,6 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
         }
         if (v == restart) {
-            //textView.setText(newBus);
-            //textNext.setText(nextBus);
             buses = new PriorityQueue<>();
             busImport = (ArrayList<busSample>) getIntent().getExtras().getSerializable("busList");
             for (busSample bus : busImport) {
@@ -200,6 +198,23 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
                 bus.setInitialTime(0);
                 buses.add(bus);
             }
+            busSample aBus = buses.remove();
+            aBus.setNewrider(0 - aBus.exiting() + aBus.boarding());
+            tempString = aBus.toString();
+            textView.setText(tempString);
+            aBus.setRiders(aBus.getNewrider());
+            aBus.setInitialTime(aBus.getOverallTime());
+            stopSample newOne = aBus.getTheroute().getStops().remove();
+            aBus.getTheroute().getStops().add(newOne);
+            aBus.setCurrent(newOne);
+            aBus.setNext(aBus.getTheroute().getStops().peek());
+            buses.add(aBus);
+            busSample ex = buses.peek();
+            int difTime = ex.getOverallTime() - aBus.getInitialTime();
+            tempNext = "Bus #"+ex.getID()+" will arrive to "+ex.getCurrent().getName()+" in "+difTime+" mins";
+            textNext.setText(tempNext);
+            newBus = tempString;
+            nextBus = tempNext;
 
         }
     }
