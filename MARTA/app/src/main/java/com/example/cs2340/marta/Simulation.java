@@ -71,7 +71,7 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             busSample aBus = buses.remove();
             aBus.setNewrider(0 - aBus.exiting() + aBus.boarding());
             tempString = aBus.toString();
-            textView.setText(tempString);
+            textView.setText(aBus.toString());
             aBus.setRiders(aBus.getNewrider());
             aBus.setInitialTime(aBus.getOverallTime());
             stopSample newOne = aBus.getTheroute().getStops().remove();
@@ -135,8 +135,8 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
         }
         SharedPreferences pref=getSharedPreferences("my_shared_preferences",MODE_PRIVATE);
         SharedPreferences.Editor editor=pref.edit();
-        editor.putString("key1",tempString);
-        editor.putString("key2",tempNext);
+        editor.putString("key1",textView.getText().toString());
+        editor.putString("key2",textNext.getText().toString());
         Gson gson = new Gson();
         String json = gson.toJson(busretrieve);
         editor.putString("key3", json);
