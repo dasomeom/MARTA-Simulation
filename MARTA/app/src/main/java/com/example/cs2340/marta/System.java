@@ -78,7 +78,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 Sample aasample = samples.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("aaSample", (Serializable) aasample);
-                if (aasample.getType().equals("BUS")) {
+                if (aasample.getType().equals("bus")) {
                     Intent intlista = new Intent (view.getContext(), listbus.class);
                     intlista.putExtras(bundle);
                     startActivity(intlista);
@@ -135,13 +135,13 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 busSample sample = new busSample();
 
                 // Setters
-                sample.setType("BUS");
-                sample.setID(Integer.parseInt(tokens[0]));
-                sample.setRoute(Integer.parseInt(tokens[1]));
-                sample.setLocation(Integer.parseInt(tokens[2]));
-                sample.setRiders(Integer.parseInt(tokens[3]));
-                sample.setCapacity(Integer.parseInt(tokens[4]));
-                sample.setSpeed(Integer.parseInt(tokens[5]));
+                sample.setType(tokens[0]);
+                sample.setID(Integer.parseInt(tokens[1]));
+                sample.setRoute(Integer.parseInt(tokens[2]));
+                sample.setLocation(Integer.parseInt(tokens[3]));
+                sample.setRiders(Integer.parseInt(tokens[4]));
+                sample.setCapacity(Integer.parseInt(tokens[5]));
+                sample.setSpeed(Integer.parseInt(tokens[6]));
 
                 // Adding object to a class
                 samples.add(sample);
@@ -179,11 +179,10 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 routeSample sample = new routeSample();
 
                 // Setters
-                sample.setType("ROUTE");
-                sample.setID(Integer.parseInt(tokens[0]));
-                sample.setIndex(Integer.parseInt(tokens[1]));
-                sample.setName(tokens[2]);
-                sample.getStopdata().add(Integer.parseInt(tokens[3]));
+                sample.setType(tokens[0]);
+                sample.setID(Integer.parseInt(tokens[1]));
+                sample.setIndex(Integer.parseInt(tokens[2]));
+                sample.setName(tokens[3]);
                 sample.getStopdata().add(Integer.parseInt(tokens[4]));
                 sample.getStopdata().add(Integer.parseInt(tokens[5]));
                 sample.getStopdata().add(Integer.parseInt(tokens[6]));
@@ -193,18 +192,7 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 sample.getStopdata().add(Integer.parseInt(tokens[10]));
                 sample.getStopdata().add(Integer.parseInt(tokens[11]));
                 sample.getStopdata().add(Integer.parseInt(tokens[12]));
-                //sample.setStop0(Integer.parseInt(tokens[3]));
-                //sample.setStop1(Integer.parseInt(tokens[4]));
-                //sample.setStop2(Integer.parseInt(tokens[5]));
-                //sample.setStop3(Integer.parseInt(tokens[6]));
-                //sample.setStop4(Integer.parseInt(tokens[7]));
-                //sample.setStop5(Integer.parseInt(tokens[8]));
-                //sample.setStop6(Integer.parseInt(tokens[9]));
-                //sample.setStop7(Integer.parseInt(tokens[10]));
-                //sample.setStop8(Integer.parseInt(tokens[11]));
-                //sample.setStop9(Integer.parseInt(tokens[12]));
-
-                // Adding object to a class
+                sample.getStopdata().add(Integer.parseInt(tokens[13]));
                 samples.add(sample);
                 routelist.add(sample);
             }
@@ -243,12 +231,12 @@ public class System extends AppCompatActivity implements View.OnClickListener {
                 stopSample sample = new stopSample();
 
                 // Setters
-                sample.setType("STOP");
-                sample.setID(Integer.parseInt(tokens[0]));
-                sample.setName((tokens[1]));
-                sample.setRiders(Integer.parseInt(tokens[2]));
-                sample.setLatitude(Double.parseDouble(tokens[3]));
-                sample.setLongitude(Double.parseDouble(tokens[4]));
+                sample.setType(tokens[0]);
+                sample.setID(Integer.parseInt(tokens[1]));
+                sample.setName((tokens[2]));
+                sample.setRiders(Integer.parseInt(tokens[3]));
+                sample.setLatitude(Double.parseDouble(tokens[4]));
+                sample.setLongitude(Double.parseDouble(tokens[5]));
                 // Adding object to a class
                 samples.add(sample);
                 stoplist.add(sample);

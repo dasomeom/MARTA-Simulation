@@ -66,7 +66,7 @@ public class stopSample extends Sample {
 
     @Override
     public String toString() {
-        return this.getType()  +" #" + this.getID() +
+        return this.getType()  +" #" + this.getID() + "\n" +
                 "Name: " + Name + "\n" +
                 "Riders: " + Riders +"\n" +
                 "Latitude: " + Latitude +"\n" +

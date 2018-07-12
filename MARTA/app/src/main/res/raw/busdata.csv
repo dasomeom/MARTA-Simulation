@@ -1,3 +1,4 @@
 ID,Route,Location,Riders,Capacity,Speed
-7,0,0,0,10,50
-11,1,0,0,10,30
+bus,7,0,4,0,10,50
+bus,11,1,4,0,10,30
+bus,18,2,4,0,10,30

@@ -71,7 +71,7 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             busSample aBus = buses.remove();
             aBus.setNewrider(0 - aBus.exiting() + aBus.boarding());
             tempString = aBus.toString();
-            textView.setText(tempString);
+            textView.setText(aBus.toString());
             aBus.setRiders(aBus.getNewrider());
             aBus.setInitialTime(aBus.getOverallTime());
             stopSample newOne = aBus.getTheroute().getStops().remove();
@@ -85,10 +85,14 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
             newBus = tempString;
             nextBus = tempNext;
-            newBuses = buses;
+            for (busSample buss : buses) {
+                newBuses.add(buss);
+            }
             if (resumeBuses != null) {
                 buses = resumeBuses;
             }
+        } else {
+            textView.setText("error on loading buses.");
         }
 
     }
@@ -131,8 +135,8 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
         }
         SharedPreferences pref=getSharedPreferences("my_shared_preferences",MODE_PRIVATE);
         SharedPreferences.Editor editor=pref.edit();
-        editor.putString("key1",tempString);
-        editor.putString("key2",tempNext);
+        editor.putString("key1",textView.getText().toString());
+        editor.putString("key2",textNext.getText().toString());
         Gson gson = new Gson();
         String json = gson.toJson(busretrieve);
         editor.putString("key3", json);
@@ -184,9 +188,33 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
             textNext.setText(tempNext);
         }
         if (v == restart) {
-            textView.setText(newBus);
-            textNext.setText(nextBus);
-            buses = newBuses;
+            buses = new PriorityQueue<>();
+            busImport = (ArrayList<busSample>) getIntent().getExtras().getSerializable("busList");
+            for (busSample bus : busImport) {
+                stopSample thisone = bus.getTheroute().getStops().remove();
+                bus.getTheroute().getStops().add(thisone);
+                bus.setCurrent(thisone);
+                bus.setNext(bus.getTheroute().getStops().peek());
+                bus.setInitialTime(0);
+                buses.add(bus);
+            }
+            busSample aBus = buses.remove();
+            aBus.setNewrider(0 - aBus.exiting() + aBus.boarding());
+            tempString = aBus.toString();
+            textView.setText(tempString);
+            aBus.setRiders(aBus.getNewrider());
+            aBus.setInitialTime(aBus.getOverallTime());
+            stopSample newOne = aBus.getTheroute().getStops().remove();
+            aBus.getTheroute().getStops().add(newOne);
+            aBus.setCurrent(newOne);
+            aBus.setNext(aBus.getTheroute().getStops().peek());
+            buses.add(aBus);
+            busSample ex = buses.peek();
+            int difTime = ex.getOverallTime() - aBus.getInitialTime();
+            tempNext = "Bus #"+ex.getID()+" will arrive to "+ex.getCurrent().getName()+" in "+difTime+" mins";
+            textNext.setText(tempNext);
+            newBus = tempString;
+            nextBus = tempNext;
 
         }
     }
