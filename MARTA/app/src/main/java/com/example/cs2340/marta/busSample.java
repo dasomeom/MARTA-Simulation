@@ -18,6 +18,7 @@ public class busSample extends Sample implements Comparable<busSample> {
     private routeSample theroute;
     private stopSample current;
     private stopSample next;
+    private String previous;
     private double distance;
     private int time;
     private int tempexit;
@@ -54,6 +55,15 @@ public class busSample extends Sample implements Comparable<busSample> {
     //public int getID() { return ID; }
 
     //public void setID(int ID) { this.ID = ID; }
+
+
+    public String getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(String previous) {
+        this.previous = previous;
+    }
 
     public int getRoute() { return Route; }
 
