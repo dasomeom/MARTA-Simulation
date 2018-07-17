@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/green"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".map">
+
+    <ImageView
+        android:id="@+id/stop0"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="442dp" />
+
+    <ImageView
+        android:id="@+id/stop1"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="498dp" />
+
+    <ImageView
+        android:id="@+id/stop2"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop3"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop4"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <ImageView
+        android:id="@+id/stop5"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop6"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop7"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop8"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop9"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/stop10"
+        android:layout_width="43dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/twobus"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/blueBus"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/blue"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <ImageView
+        android:id="@+id/greenBus"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/green"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <ImageView
+        android:id="@+id/redBus"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/red"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <Button
+        android:id="@+id/mapNext"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/simView"
+        android:layout_alignTop="@+id/sim_List"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/button"
+        android:text="Refresh"
+        android:textColor="@android:color/background_light"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mapRestart"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/sim_List"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="23dp"
+        android:layout_toEndOf="@+id/sim_Refresh"
+        android:background="@drawable/button"
+        android:text="Restart"
+        android:textColor="@android:color/background_light"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mapTolist"
+        app:layout_constraintStart_toEndOf="@+id/mapNext" />
+
+    <Button
+        android:id="@+id/mapTolist"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
+        android:layout_alignTop="@+id/sim_List"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_toEndOf="@+id/sim_Refresh"
+        android:background="@drawable/button"
+        android:text="To List"
+        android:textColor="@android:color/background_light"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/stop0Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/stop0Text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="84dp" />
+</android.support.constraint.ConstraintLayout>

@@ -25,7 +25,7 @@ android:background="@drawable/gradient">
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="42dp"
         android:background="@drawable/button"
-        android:text="To List"
+        android:text="List"
         android:textColor="@android:color/background_light"
         android:textSize="21sp" />
 
@@ -36,7 +36,7 @@ android:background="@drawable/gradient">
         android:layout_alignStart="@+id/simView"
         android:layout_alignTop="@+id/sim_List"
         android:background="@drawable/button"
-        android:text="Refresh"
+        android:text="Next"
         android:textColor="@android:color/background_light"
         android:textSize="21sp" />
 
