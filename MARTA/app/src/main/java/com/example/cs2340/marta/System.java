@@ -27,8 +27,7 @@ import java.util.Queue;
 
 public class System extends AppCompatActivity implements View.OnClickListener {
 
-    private Button buttonLogout;
-    private Button buttonSimulation;
+    private Button buttonLogout,buttonSimulation, buttonMap;
     private SampleAdapter adapter;
     private ListView lv;
     private List<Sample> samples = new ArrayList<>();
@@ -45,6 +44,8 @@ public class System extends AppCompatActivity implements View.OnClickListener {
         buttonLogout.setOnClickListener(this);
         buttonSimulation= (Button) findViewById(R.id.simulation);
         buttonSimulation.setOnClickListener(this);
+        buttonMap= (Button) findViewById(R.id.toMap);
+        buttonMap.setOnClickListener(this);
 
 
         readBusData();
@@ -104,6 +105,14 @@ public class System extends AppCompatActivity implements View.OnClickListener {
             Intent intSimulation = new Intent(this, Simulation.class);
             intSimulation.putExtras(bundleBus);
             startActivity(intSimulation);
+        }
+        if (v== buttonMap) {
+            Bundle bundleBus = new Bundle();
+            bundleBus.putSerializable("busList", (Serializable) buslist);
+            bundleBus.putSerializable("stopList", (Serializable) stoplist);
+            Intent intMap = new Intent(this, map.class);
+            intMap.putExtras(bundleBus);
+            startActivity(intMap);
         }
     }
 

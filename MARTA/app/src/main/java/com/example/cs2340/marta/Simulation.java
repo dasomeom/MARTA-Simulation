@@ -40,7 +40,6 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
     private String tempString;
     private String tempNext;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +55,7 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
         textNext.setMovementMethod(new ScrollingMovementMethod());
         textView.setMovementMethod(new ScrollingMovementMethod());
 
-        Log.d("tag", "this is oncreate message");
+        Log.d("tag@@@@@@@@@", "this is oncreate message");
         if(getIntent().getExtras().getSerializable("busList") != null) {
             busImport = (ArrayList<busSample>) getIntent().getExtras().getSerializable("busList");
 
