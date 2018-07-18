@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/green"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".map">
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/text3"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/stop0"
@@ -14,7 +23,7 @@
         app:srcCompat="@drawable/twobus"
         tools:layout_editor_absoluteX="114dp"
         tools:layout_editor_absoluteY="442dp" />
-
+    
     <ImageView
         android:id="@+id/stop1"
         android:layout_width="43dp"
@@ -95,30 +104,6 @@
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="302dp" />
 
-    <ImageView
-        android:id="@+id/blueBus"
-        android:layout_width="42dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/blue"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="251dp" />
-
-    <ImageView
-        android:id="@+id/greenBus"
-        android:layout_width="42dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/green"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="263dp" />
-
-    <ImageView
-        android:id="@+id/redBus"
-        android:layout_width="42dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/red"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="212dp" />
-
     <Button
         android:id="@+id/mapNext"
         android:layout_width="100dp"
@@ -173,7 +158,6 @@
         android:layout_alignLeft="@+id/stop0"
         android:layout_alignRight="@+id/stop0"
         android:layout_below="@+id/stop0"
-        android:text="TextView"
         android:textColor="@android:color/black" />
 
     <TextView
@@ -183,7 +167,6 @@
         android:layout_alignLeft="@+id/stop1"
         android:layout_alignRight="@+id/stop1"
         android:layout_below="@+id/stop1"
-        android:text="TextView"
         android:textColor="@android:color/black"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="84dp" />
@@ -193,7 +176,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:text="TextView"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
 
@@ -202,7 +184,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:text="TextView"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
 
@@ -211,7 +192,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:text="TextView"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
 
@@ -220,14 +200,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:text="TextView"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
+
     <TextView
         android:id="@+id/stop6Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
@@ -236,7 +215,6 @@
         android:id="@+id/stop7Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
@@ -245,7 +223,6 @@
         android:id="@+id/stop8Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
@@ -255,7 +232,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:text="TextView"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
 
@@ -263,59 +239,146 @@
         android:id="@+id/stop10Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="84dp" />
-
-    <TextView
-        android:id="@+id/bus7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@android:color/black"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="84dp" />
-
-    <TextView
-        android:id="@+id/bus11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@android:color/black"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="84dp" />
-
-    <TextView
-        android:id="@+id/bus18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@android:color/black"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="204dp" />
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="140"
-        android:layout_height="60"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="239dp"
-        tools:layout_editor_absoluteY="442dp" />
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/text2"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/text3"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="392dp" />
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/mapTolist"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/greenBus"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/green"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <ImageView
+        android:id="@+id/blueBus"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/blue"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <ImageView
+        android:id="@+id/redBus"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/red"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/lll9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </android.support.constraint.ConstraintLayout>

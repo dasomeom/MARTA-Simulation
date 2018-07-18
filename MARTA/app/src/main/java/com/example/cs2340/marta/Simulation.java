@@ -40,6 +40,7 @@ public class Simulation extends AppCompatActivity implements View.OnClickListene
     private String tempString;
     private String tempNext;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
