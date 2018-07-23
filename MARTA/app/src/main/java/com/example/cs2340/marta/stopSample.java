@@ -62,8 +62,7 @@ public class stopSample extends Sample {
     public void setLongitude(double longitude) {
         Longitude = longitude;
     }
-
-
+    
     @Override
     public String toString() {
         return this.getType()  +" #" + this.getID() + "\n" +
