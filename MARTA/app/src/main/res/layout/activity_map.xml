@@ -309,6 +309,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     <com.example.cs2340.marta.LineView
+        android:id="@+id/l6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/l9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
         android:id="@+id/ll0"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -334,6 +350,18 @@
         android:layout_height="match_parent" />
     <com.example.cs2340.marta.LineView
         android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.example.cs2340.marta.LineView
+        android:id="@+id/ll9"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

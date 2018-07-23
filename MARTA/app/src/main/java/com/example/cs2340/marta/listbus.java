@@ -22,7 +22,7 @@ public class listbus extends AppCompatActivity implements View.OnClickListener {
         buttontolist.setOnClickListener(this);
         refresh = (Button) findViewById(R.id.refresh);
         refresh.setOnClickListener(this);
-        Bundle bundle = getIntent().getExtras();
+        //Bundle bundle = getIntent().getExtras();
         if(getIntent().getExtras().getSerializable("aaSample") != null) {
             aasample = (Sample) getIntent().getExtras().getSerializable("aaSample");
             aaa = (busSample) aasample;
@@ -36,7 +36,6 @@ public class listbus extends AppCompatActivity implements View.OnClickListener {
         }
         aaa.setRiders(aaa.getNewrider());
         aaa.setInitialTime(aaa.getOverallTime());
-
     }
 
     public void onClick(View v) {

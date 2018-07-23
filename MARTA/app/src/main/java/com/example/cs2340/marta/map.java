@@ -1,31 +1,23 @@
 package com.example.cs2340.marta;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Point;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class map extends AppCompatActivity implements View.OnClickListener {
 
@@ -46,8 +38,8 @@ public class map extends AppCompatActivity implements View.OnClickListener {
     private ImageView Stop8;
     private ImageView Stop9;
     private ImageView Stop10;
-    private LineView l0,l1,l2,l3,l4,l5;
-    private LineView ll0, ll1, ll2, ll3, ll4, ll5, ll6;
+    private LineView l0,l1,l2,l3,l4,l5, l6, l7, l8, l9;
+    private LineView ll0, ll1, ll2, ll3, ll4, ll5, ll6, ll7, ll8, ll9;
     private LineView lll0, lll1, lll2, lll3, lll4, lll5, lll6, lll7, lll8, lll9;
     private TextView t1, t2, t3, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10;
     private List<busSample> busMap = new ArrayList<>();
@@ -137,6 +129,10 @@ public class map extends AppCompatActivity implements View.OnClickListener {
         l3 = (LineView) findViewById(R.id.l3);
         l4 = (LineView) findViewById(R.id.l4);
         l5 = (LineView) findViewById(R.id.l5);
+        l6 = (LineView) findViewById(R.id.l6);
+        l7 = (LineView) findViewById(R.id.l7);
+        l8 = (LineView) findViewById(R.id.l8);
+        l9 = (LineView) findViewById(R.id.l9);
         ll0 = (LineView) findViewById(R.id.ll0);
         ll1 = (LineView) findViewById(R.id.ll1);
         ll2 = (LineView) findViewById(R.id.ll2);
@@ -144,6 +140,9 @@ public class map extends AppCompatActivity implements View.OnClickListener {
         ll4 = (LineView) findViewById(R.id.ll4);
         ll5 = (LineView) findViewById(R.id.ll5);
         ll6 = (LineView) findViewById(R.id.ll6);
+        ll7 = (LineView) findViewById(R.id.ll7);
+        ll8 = (LineView) findViewById(R.id.ll8);
+        ll9 = (LineView) findViewById(R.id.ll9);
         lll0 = (LineView) findViewById(R.id.lll0);
         lll1 = (LineView) findViewById(R.id.lll1);
         lll2 = (LineView) findViewById(R.id.lll2);
@@ -161,6 +160,10 @@ public class map extends AppCompatActivity implements View.OnClickListener {
         line1.add(l3);
         line1.add(l4);
         line1.add(l5);
+        line1.add(l6);
+        line1.add(l7);
+        line1.add(l8);
+        line1.add(l9);
         line2.add(ll0);
         line2.add(ll1);
         line2.add(ll2);
@@ -168,6 +171,9 @@ public class map extends AppCompatActivity implements View.OnClickListener {
         line2.add(ll4);
         line2.add(ll5);
         line2.add(ll6);
+        line2.add(ll7);
+        line2.add(ll8);
+        line2.add(ll9);
         line3.add(lll0);
         line3.add(lll1);
         line3.add(lll2);
@@ -288,7 +294,6 @@ public class map extends AppCompatActivity implements View.OnClickListener {
             aBus.setNext(aBus.getTheroute().getStops().peek());
             buses.add(aBus);
             busSample ex = buses.peek();
-            int difTime = ex.getOverallTime() - aBus.getInitialTime();
         }
     }
 
@@ -327,7 +332,6 @@ public class map extends AppCompatActivity implements View.OnClickListener {
             aBus.setRiders(aBus.getNewrider());
             buses.add(aBus);
             busSample ex = buses.peek();
-            int difTime = ex.getOverallTime() - aBus.getInitialTime();
 
         }
         if (v == restart) {
@@ -372,7 +376,6 @@ public class map extends AppCompatActivity implements View.OnClickListener {
             aBus.setCurrent(newOne);
             aBus.setNext(aBus.getTheroute().getStops().peek());
             buses.add(aBus);
-            busSample ex = buses.peek();
         }
     }
 
