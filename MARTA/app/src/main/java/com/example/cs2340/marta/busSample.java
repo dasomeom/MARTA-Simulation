@@ -15,7 +15,7 @@ public class busSample extends Sample implements Comparable<busSample> {
     private int Riders;
     private int Capacity;
     private int Speed;
-    private routeSample theroute;
+    private routeSample theRoute;
     private stopSample current;
     private stopSample next;
     private String previous;
@@ -38,7 +38,7 @@ public class busSample extends Sample implements Comparable<busSample> {
         Riders = riders;
         Capacity = capacity;
         Speed = speed;
-        this.theroute = theroute;
+        this.theRoute = theRoute;
         this.current = current;
         this.next = next;
         this.distance = distance;
@@ -106,9 +106,9 @@ public class busSample extends Sample implements Comparable<busSample> {
 
     public void setSpeed(int speed) { Speed = speed; }
 
-    public routeSample getTheroute() { return theroute; }
+    public routeSample getTheroute() { return theRoute; }
 
-    public void setTheroute(routeSample theroute) { this.theroute = theroute; }
+    public void setTheroute(routeSample theRoute) { this.theRoute = theRoute; }
 
     public stopSample getCurrent() { return current; }
 
