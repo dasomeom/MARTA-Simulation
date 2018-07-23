@@ -1,6 +1,5 @@
 package com.example.cs2340.marta;
 
-
 import java.io.Serializable;
 import java.util.List;
 
